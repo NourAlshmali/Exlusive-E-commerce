@@ -43,7 +43,11 @@ const NavBar = () => {
             <li
               key={tab.id}
               onClick={() => handleSearch(tab)}
-              className="text-black text-[30px] cursor-pointer"
+              className={`text-black text-[30px] cursor-pointer ${
+                tab.type === "heart"
+                  ? "hover:text-red-500"
+                  : "hover:text-blue-500"
+              }`}
             >
               {tab.type === "search" && showSearch ? (
                 <input

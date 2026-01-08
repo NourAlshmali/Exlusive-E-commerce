@@ -15,11 +15,11 @@ const SideBarHero = () => {
   ];
   return (
     <div>
-      <ul className="flex flex-col gap-y-6 mt-10">
+      <ul className="flex flex-col gap-y-7 pt-15">
         {List.map((n) => (
           <li
             key={n.id}
-            className="text-black text-[24px] flex justify-between items-center"
+            className="text-black text-[25px] flex justify-center items-center cursor-pointer"
           >
             {n.text} {n.icon}
           </li>
