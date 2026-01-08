@@ -3,6 +3,7 @@ import Hero from "../components/Home/Hero";
 import FlashSalles from "../components/Home/FlashSalles";
 import Categories from "../components/Home/Categories";
 import BestSelling from "../components/Home/BestSelling";
+import Music from "../components/Home/Music";
 
 const Homepage = () => {
   return (
@@ -11,6 +12,7 @@ const Homepage = () => {
       <FlashSalles />
       <Categories />
       <BestSelling/>
+      <Music/>
     </div>
   );
 };
