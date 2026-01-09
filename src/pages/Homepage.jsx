@@ -4,6 +4,7 @@ import FlashSalles from "../components/Home/FlashSalles";
 import Categories from "../components/Home/Categories";
 import BestSelling from "../components/Home/BestSelling";
 import Music from "../components/Home/Music";
+import Products from "../components/Home/Products";
 
 const Homepage = () => {
   return (
@@ -13,6 +14,7 @@ const Homepage = () => {
       <Categories />
       <BestSelling/>
       <Music/>
+      <Products/>
     </div>
   );
 };

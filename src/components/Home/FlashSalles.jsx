@@ -3,6 +3,7 @@ import CountdownTimer from "../Flash Sales/CountdownTimer";
 import img1 from "/img/sales.png";
 import SalesCard from "../Flash Sales/SalesCard";
 import HomeHeader from "../HomeHeader";
+import ViewAllButton from "../ViewAllButton";
 
 const FlashSalles = () => {
   const THREE_DAYS_IN_MS = 3 * 24 * 60 * 60 * 1000; //مدة 3 أيام بالميللي ثانية
@@ -24,7 +25,7 @@ const FlashSalles = () => {
             title="Jorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra."
             currentPrice="John Doe"
             oldPrice="Youtuber"
-            discount="40"
+            discount="40%"
             rating="4"
             reviews="4"
           />
@@ -33,7 +34,7 @@ const FlashSalles = () => {
             title="Jorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra."
             currentPrice="John Doe"
             oldPrice="Youtuber"
-            discount="40"
+            discount="40%"
             rating="5"
             reviews="5"
           />
@@ -42,7 +43,7 @@ const FlashSalles = () => {
             title="Jorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra."
             currentPrice="John Doe"
             oldPrice="Youtuber"
-            discount="40"
+            discount="40%"
             rating="3"
             reviews="3"
           />
@@ -52,7 +53,7 @@ const FlashSalles = () => {
             title="Jorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra."
             currentPrice="John Doe"
             oldPrice="Youtuber"
-            discount="40"
+            discount="40%"
             rating="3"
             reviews="3"
           />
@@ -62,7 +63,7 @@ const FlashSalles = () => {
             title="Jorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra."
             currentPrice="John Doe"
             oldPrice="Youtuber"
-            discount="40"
+            discount="40%"
             rating="3"
             reviews="3"
           />
@@ -108,9 +109,9 @@ const FlashSalles = () => {
           />
         </div>
       </div>
-      <button className="w-50 h-12 mt-15 bg-red-500 hover:bg-gray-500 rounded-[6px] self-center text-white cursor-pointer">
-        View All Products
-      </button>
+      <div className="flex self-center">
+        <ViewAllButton />
+      </div>
       <div className="w-full h-0.5 mt-10 bg-gray-300 "></div>
     </div>
   );
