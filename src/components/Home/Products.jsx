@@ -8,7 +8,7 @@ import ViewAllButton from "../ViewAllButton";
 
 const Products = () => {
   return (
-    <div className="w-full min-h-screen pb-5 flex flex-col pl-40">
+    <div className="w-full min-h-screen pt-20 flex flex-col pl-40">
       <HomeHeader type="Our Products" title="Explore Our Products" />
       <div className="grid grid-cols-4 pt-20 gap-5 px-30">
         <SalesCard
