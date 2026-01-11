@@ -7,6 +7,8 @@ import Music from "../components/Home/Music";
 import Products from "../components/Home/Products";
 import Featured from "../components/Home/Featured";
 import ServicesSection from "../components/Home/ServicesSection";
+import SignUp from "./SignUp";
+import Login from "./Login";
 
 const Homepage = () => {
   return (
@@ -19,6 +21,8 @@ const Homepage = () => {
       <Products />
       <Featured />
       <ServicesSection />
+      <SignUp />
+      {/* <Login /> */}
     </div>
   );
 };

@@ -4,7 +4,7 @@ import img1 from "/img/f1.png";
 import img2 from "/img/f2.png";
 import img3 from "/img/f3.png";
 import img4 from "/img/f4.png";
-import PromoCard from "../../PromoCard";
+import PromoCard from "../PromoCard";
 
 const Featured = () => {
   return (
