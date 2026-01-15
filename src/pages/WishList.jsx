@@ -17,7 +17,6 @@ const Wishlist = () => {
   return (
     <div className="bg-white min-h-screen flex justify-center py-10">
       <div className="w-[90%] max-w-5xl flex flex-col">
-       
         <div className="flex justify-between items-center mb-6">
           <h2 className="text-2xl font-bold">Wishlist ({wishlist.length})</h2>
           <button className="px-4 py-2 border-2 border-black rounded hover:bg-black hover:text-white transition">
@@ -25,13 +24,10 @@ const Wishlist = () => {
           </button>
         </div>
 
-      
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-20">
           {wishlist.map((item) => (
             <div key={item.id} className="group flex flex-col gap-2 w-64">
-            
               <div className="relative bg-[#F5F5F5] rounded-md flex justify-center items-center overflow-hidden h-64">
-               
                 <div className="absolute top-2 right-2 w-10 h-10 rounded-full bg-red-500 hover:bg-gray-400 flex justify-center items-center">
                   <button
                     onClick={() => toggleWishlist(item)}
@@ -41,7 +37,6 @@ const Wishlist = () => {
                   </button>
                 </div>
 
-               
                 <div className="w-full bg-[#F5F5F5] rounded-md p-10 flex justify-center items-center overflow-hidden">
                   <img
                     src={item.image}
@@ -50,7 +45,6 @@ const Wishlist = () => {
                   />
                 </div>
 
-              
                 <button className="absolute bottom-0 w-full bg-black text-white py-2 opacity-0 group-hover:opacity-100 transition-opacity">
                   Add To Cart
                 </button>
@@ -81,9 +75,9 @@ const Wishlist = () => {
           <HomeHeader type="just for you" title=" " />
           <button
             onClick={handleWithView}
-            className="w-32 h-10 bg-red-500 hover:bg-gray-500 rounded-md text-white cursor-pointer"
+            className="px-4 py-2 border-2 border-black rounded hover:bg-black hover:text-white transition"
           >
-            View All
+            See All
           </button>
         </div>
 

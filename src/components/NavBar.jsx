@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
-
+import { WishlistContextData } from "../components/WishlistContext";
 import TopNav from "./TopNav";
 import { CiSearch, CiHeart, CiShoppingCart } from "react-icons/ci";
 import { IoPersonOutline } from "react-icons/io5";
@@ -13,9 +13,12 @@ import {
   FaSignOutAlt,
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import Wishlist from "../pages/WishList";
 
 const NavBar = () => {
   const navigate = useNavigate();
+  const { wishlist } = useContext(WishlistContextData);
+
 
   const [showSearch, setShowSearch] = useState(false);
   const [account, setAccount] = useState(false);
@@ -24,7 +27,7 @@ const NavBar = () => {
     { id: 1, tab: "Home", path: "/" },
     { id: 2, tab: "Contact" },
     { id: 3, tab: "About" },
-    { id: 4, tab: "Sign Up" , path:"/signup" },
+    { id: 4, tab: "Sign Up", path: "/signup" },
   ];
 
   const NavIcons = [
@@ -47,20 +50,17 @@ const NavBar = () => {
   ];
 
   const handleIconClick = (icon) => {
-   
     if (icon.path) {
       navigate(icon.path);
       return;
     }
 
-  
     if (icon.type === "search") {
       setShowSearch((prev) => !prev);
       setAccount(false);
       return;
     }
 
-   
     if (icon.type === "account") {
       setAccount((prev) => !prev);
       setShowSearch(false);
@@ -96,7 +96,10 @@ const NavBar = () => {
                 icon.type === "heart"
                   ? "hover:text-red-500"
                   : "hover:text-blue-500"
-              }`}
+              }
+            
+              
+              `}
             >
               {icon.type === "search" && showSearch ? (
                 <input
@@ -109,6 +112,13 @@ const NavBar = () => {
               ) : (
                 icon.tab
               )}
+
+         {icon.type === "heart" && wishlist.length > 0 && (
+            <span className="absolute -top-2 -right-2 bg-red-500 text-white text-[12px] w-5 h-5 flex items-center justify-center rounded-full">
+             {wishlist.length}
+              </span>
+)}
+
 
               {icon.type === "account" && account && (
                 <AccountDropdown items={accountDropDown} />
