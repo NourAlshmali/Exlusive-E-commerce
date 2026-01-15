@@ -10,9 +10,7 @@ const Root = () => {
   return (
     <div>
       <NavBar />
-         <WishlistContext>
         <Outlet />
-      </WishlistContext>
       <Footer />
     </div>
   );

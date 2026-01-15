@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { MdDriveFileRenameOutline } from "react-icons/md";
 import { FaPhoneFlip } from "react-icons/fa6";
@@ -10,7 +10,27 @@ const SignUp = () => {
   const navigate = useNavigate();
 
   const [hideContent, setHideContent] = useState(false);
+  const [hideRed, setHideRed] = useState(false);
   const [fillRed, setFillRed] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setHideRed(true);
+    }, 50);
+    return () => clearTimeout(timer);
+  }, []);
+
+  const handleWithCreate = () => {
+    setHideContent(true);
+
+    // بعد ما يختفي الفورم + الصورة
+    setTimeout(() => {
+      setFillRed(true); // الأحمر يبلش يغطي الشاشة بالكامل
+    }, 100);
+    setTimeout(() => {
+      navigate("/");
+    }, 1300);
+  };
 
   const handleSignUpClick = () => {
     setHideContent(true);
@@ -18,7 +38,7 @@ const SignUp = () => {
     // بعد ما يختفي الفورم + الصورة
     setTimeout(() => {
       setFillRed(true); // الأحمر يبلش يغطي الشاشة بالكامل
-    }, 500);
+    }, 100);
     setTimeout(() => {
       navigate("/login");
     }, 1300);
@@ -38,21 +58,28 @@ const SignUp = () => {
 
   return (
     <div
-      className="relative w-full h-full flex
-        bg-[linear-gradient(115deg,#ffffff_60%,#ef4444_60%)] 
-        border-4 border-red-500
-        shadow-[0_0_15px_rgba(239,68,68,0.7)]
-        overflow-hidden"
+      className="flex w-full h-screen relative z-10
+          bg-[linear-gradient(115deg,#ffffff_60%,#ef4444_60%)]
+          border-4 border-red-500
+          shadow-[0_0_15px_rgba(239,68,68,0.7)]"
     >
+      {/* الأحمر عند دخول الصفحة */}
+      <div
+        className={`absolute top-0 right-0 h-full bg-red-500 z-20
+          transition-all duration-[1200ms] ease-in-out
+          ${hideRed ? "w-0" : "w-full"}
+        `}
+      ></div>
+
+      {/* الأحمر عند الخروج لصفحة signup */}
       <div
         className={`absolute top-0 right-0 h-full bg-red-500
           origin-right
           transition-all duration-1000 ease-in-out
           ${fillRed ? "w-full" : "w-0"}
-          z-20
+          z-30
         `}
       ></div>
-
       <div className="relative z-10 flex w-full">
         <div
           className={`flex pl-50 pt-20 flex-col gap-5
@@ -71,7 +98,7 @@ const SignUp = () => {
 
           <form
             onSubmit={handleSubmit}
-            className="flex flex-col gap-6 pl-10 pt-10 w-110 h-120 "
+            className="flex flex-col gap-6 pl-10 pt-10 w-120 h-130 "
           >
             <label className="flex flex-col">
               <div className="flex justify-between">
@@ -114,8 +141,9 @@ const SignUp = () => {
 
             <div className="flex flex-col items-center pt-10 gap-y-4">
               <button
+                onClick={handleWithCreate}
                 type="submit"
-                className="w-50 h-12 bg-red-500 rounded-md text-white"
+                className="w-50 h-12 bg-red-500 rounded-md cursor-pointer text-white"
               >
                 Create Account
               </button>

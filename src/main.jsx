@@ -1,9 +1,10 @@
-import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
+import { StrictMode } from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import WishlistContext from "./components/WishlistContext.jsx"; // ✅ صح
+import WishlistContext from "./components/WishlistContext.jsx";
 
 import Root from "./pages/Root.jsx";
+import AuthLayout from "./pages/AuthLayout.jsx";
 import HomePage from "./pages/Homepage.jsx";
 import SignUp from "./pages/SignUp.jsx";
 import Login from "./pages/Login.jsx";
@@ -11,18 +12,23 @@ import Wishlist from "./pages/WishList.jsx";
 
 const router = createBrowserRouter([
   {
-    path: "/",
     element: <Root />,
     children: [
       { index: true, element: <HomePage /> },
-      { path: "signup", element: <SignUp /> },
-      { path: "login", element: <Login /> },
       { path: "wishlist", element: <Wishlist /> },
+    ],
+  },
+  {
+    element: <AuthLayout />,
+    children: [
+      { path: "login", element: <Login /> },
+      { path: "signup", element: <SignUp /> },
     ],
   },
 ]);
 
-createRoot(document.getElementById("root")).render(
+const root = createRoot(document.getElementById("root"));
+root.render(
   <StrictMode>
     <WishlistContext>
       <RouterProvider router={router} />
