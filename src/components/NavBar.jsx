@@ -24,7 +24,7 @@ const NavBar = () => {
     { id: 1, tab: "Home", path: "/" },
     { id: 2, tab: "Contact" },
     { id: 3, tab: "About" },
-    { id: 4, tab: "Sign Up" },
+    { id: 4, tab: "Sign Up" , path:"/signup" },
   ];
 
   const NavIcons = [

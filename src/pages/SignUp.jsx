@@ -156,12 +156,12 @@ const SignUp = () => {
             </div>
           </form>
 
-          <div className="flex gap-3 pl-30">
+          <div className="flex gap-3 pl-30 text-[20px]">
             <p>Already have account?</p>
             <button
               type="button"
               onClick={handleSignUpClick}
-              className="text-red-500 font-semibold cursor-pointer"
+              className="text-red-500 font-semibold underline cursor-pointer"
             >
               log in
             </button>
