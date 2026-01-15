@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import { CiHeart } from "react-icons/ci";
 import { FiEye } from "react-icons/fi";
 import { FaStar } from "react-icons/fa";
 import HomeHeader from "../HomeHeader";
+import { WishlistContextData } from "../WishlistContext";
 
 const SalesCard = ({
+  id,
   image,
   title,
   currentPrice,
@@ -17,6 +19,14 @@ const SalesCard = ({
   //  colors={["#FFAD33", "#1E40AF", "#16A34A"]}
   colors = [],
 }) => {
+  const { wishlist, toggleWishlist, isInWishlist } =
+    useContext(WishlistContextData);
+  const liked = isInWishlist(id);
+
+  const getHeartClass = () => {
+    return liked ? "bg-[#DB4444] text-[DB4444]" : "bg-white";
+  };
+
   return (
     <div className="group flex flex-col gap-2 w-64">
       <div className="relative bg-[#F5F5F5] rounded-md p-10 flex justify-center items-center overflow-hidden h-64">
@@ -24,11 +34,23 @@ const SalesCard = ({
           -{discount}
         </span>
         <div className="absolute top-3 right-3 flex flex-col gap-2">
-          <button className="bg-white p-1.5 rounded-full cursor-pointer hover:bg-[#DB4444] hover:text-white transition">
+          <button
+            onClick={() =>
+              toggleWishlist({
+                id,
+                image,
+                title,
+                currentPrice,
+                oldPrice,
+                discount,
+                rating,
+                reviews,
+                colors,
+              })
+            }
+            className={`p-1.5 rounded-full cursor-pointer transition ${getHeartClass()}`}
+          >
             <CiHeart size={20} />
-          </button>
-          <button className="bg-white p-1.5 rounded-full cursor-pointer hover:bg-[#DB4444] hover:text-white transition">
-            <FiEye size={20} />
           </button>
         </div>
         <img

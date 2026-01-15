@@ -21,6 +21,7 @@ const FlashSalles = () => {
         <div className="flex gap-20 pt-10 pl-20 ">
           <SalesCard
             //image, title, currentPrice, oldPrice, discount, rating, reviews
+             id={5}
             image={img1}
             title="Jorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra."
             currentPrice="John Doe"
@@ -30,6 +31,7 @@ const FlashSalles = () => {
             reviews="4"
           />
           <SalesCard
+           id={6}
             image={img1}
             title="Jorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra."
             currentPrice="John Doe"
@@ -39,6 +41,7 @@ const FlashSalles = () => {
             reviews="5"
           />
           <SalesCard
+           id={7}
             image={img1}
             title="Jorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra."
             currentPrice="John Doe"
@@ -49,6 +52,7 @@ const FlashSalles = () => {
           />
 
           <SalesCard
+           id={8}
             image={img1}
             title="Jorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra."
             currentPrice="John Doe"
@@ -59,6 +63,7 @@ const FlashSalles = () => {
           />
 
           <SalesCard
+           id={9}
             image={img1}
             title="Jorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra."
             currentPrice="John Doe"
@@ -69,6 +74,7 @@ const FlashSalles = () => {
           />
 
           <SalesCard
+           id={10}
             image={img1}
             title="Jorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra."
             currentPrice="John Doe"
@@ -79,6 +85,7 @@ const FlashSalles = () => {
           />
 
           <SalesCard
+           id={11}
             image={img1}
             title="Jorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra."
             currentPrice="John Doe"
@@ -89,6 +96,7 @@ const FlashSalles = () => {
           />
 
           <SalesCard
+           id={12}
             image={img1}
             title="Jorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra."
             currentPrice="John Doe"
@@ -99,6 +107,7 @@ const FlashSalles = () => {
           />
 
           <SalesCard
+           id={13}
             image={img1}
             title="Jorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra."
             currentPrice="John Doe"

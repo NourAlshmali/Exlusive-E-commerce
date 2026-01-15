@@ -9,6 +9,7 @@ import Featured from "../components/Home/Featured";
 import ServicesSection from "../components/Home/ServicesSection";
 import SignUp from "./SignUp";
 import Login from "./Login";
+import WishList from "./WishList";
 
 const Homepage = () => {
   return (
@@ -21,8 +22,9 @@ const Homepage = () => {
       <Products />
       <Featured />
       <ServicesSection />
-      <SignUp />
+      {/* <SignUp /> */}
       {/* <Login /> */}
+      {/* <WishList /> */}
     </div>
   );
 };

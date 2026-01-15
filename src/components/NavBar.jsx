@@ -1,7 +1,10 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 import TopNav from "./TopNav";
 import { CiSearch, CiHeart, CiShoppingCart } from "react-icons/ci";
 import { IoPersonOutline } from "react-icons/io5";
+import AccountDropdown from "./AccountDropDown";
 import {
   FaUserCircle,
   FaBoxOpen,
@@ -9,13 +12,16 @@ import {
   FaStar,
   FaSignOutAlt,
 } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const NavBar = () => {
+  const navigate = useNavigate();
+
   const [showSearch, setShowSearch] = useState(false);
   const [account, setAccount] = useState(false);
 
   const NavTabs = [
-    { id: 1, tab: "Home" },
+    { id: 1, tab: "Home", path: "/" },
     { id: 2, tab: "Contact" },
     { id: 3, tab: "About" },
     { id: 4, tab: "Sign Up" },
@@ -23,11 +29,10 @@ const NavBar = () => {
 
   const NavIcons = [
     { id: 1, tab: <CiSearch />, type: "search" },
-    { id: 2, tab: <CiHeart />, type: "heart" },
+    { id: 2, tab: <CiHeart />, type: "heart", path: "/wishlist" },
     { id: 3, tab: <CiShoppingCart />, type: "cart" },
     { id: 4, tab: <IoPersonOutline />, type: "account" },
   ];
-
   const accountDropDown = [
     { id: 1, label: "Manage My Account", icon: <FaUserCircle size={16} /> },
     { id: 2, label: "My Orders", icon: <FaBoxOpen size={16} /> },
@@ -37,14 +42,24 @@ const NavBar = () => {
   ];
 
   const handleIconClick = (icon) => {
+    // 1️⃣ إذا في path → تنقّل ووقف
+    if (icon.path) {
+      navigate(icon.path);
+      return;
+    }
+
+    // 2️⃣ search
     if (icon.type === "search") {
       setShowSearch((prev) => !prev);
       setAccount(false);
+      return;
     }
 
+    // 3️⃣ account
     if (icon.type === "account") {
       setAccount((prev) => !prev);
       setShowSearch(false);
+      return;
     }
   };
 
@@ -58,6 +73,7 @@ const NavBar = () => {
         <ul className="flex gap-8">
           {NavTabs.map((tab) => (
             <li
+              onClick={() => handleIconClick(tab)}
               key={tab.id}
               className="text-black text-[20px] cursor-pointer hover:text-red-500"
             >
@@ -90,17 +106,7 @@ const NavBar = () => {
               )}
 
               {icon.type === "account" && account && (
-                <ul className="absolute right-0 mt-3 w-52 bg-black rounded-md shadow-lg z-50">
-                  {accountDropDown.map((item) => (
-                    <li
-                      key={item.id}
-                      className="flex items-center gap-3 px-4 py-3 text-white cursor-pointer hover:bg-gray-700"
-                    >
-                      {item.icon}
-                      <span className="text-sm">{item.label}</span>
-                    </li>
-                  ))}
-                </ul>
+                <AccountDropdown items={accountDropDown} />
               )}
             </li>
           ))}
