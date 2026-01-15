@@ -38,24 +38,29 @@ const NavBar = () => {
     { id: 2, label: "My Orders", icon: <FaBoxOpen size={16} /> },
     { id: 3, label: "My Cancellations", icon: <FaTimesCircle size={16} /> },
     { id: 4, label: "My Reviews", icon: <FaStar size={16} /> },
-    { id: 5, label: "Logout", icon: <FaSignOutAlt size={16} /> },
+    {
+      id: 5,
+      label: "Logout",
+      icon: <FaSignOutAlt size={16} />,
+      path: "/login",
+    },
   ];
 
   const handleIconClick = (icon) => {
-    // 1️⃣ إذا في path → تنقّل ووقف
+   
     if (icon.path) {
       navigate(icon.path);
       return;
     }
 
-    // 2️⃣ search
+  
     if (icon.type === "search") {
       setShowSearch((prev) => !prev);
       setAccount(false);
       return;
     }
 
-    // 3️⃣ account
+   
     if (icon.type === "account") {
       setAccount((prev) => !prev);
       setShowSearch(false);

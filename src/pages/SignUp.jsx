@@ -21,7 +21,7 @@ const SignUp = () => {
     }, 500);
     setTimeout(() => {
       navigate("/login");
-    }, 1300); // نفس مدة الأنميشن تقريباً
+    }, 1300);
   };
 
   const handleSubmit = (e) => {

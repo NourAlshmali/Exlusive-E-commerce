@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 
 import { WishlistContextData } from "../components/WishlistContext";
-import { CiTrash } from "react-icons/ci"; // أيقونة سلة حذف
+import { CiTrash } from "react-icons/ci"; 
 
 const Wishlist = () => {
   const { wishlist, toggleWishlist } = useContext(WishlistContextData);

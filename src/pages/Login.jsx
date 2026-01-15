@@ -40,8 +40,8 @@ const Login = () => {
     // }
 
     // إذا كل شيء صح، نذهب للـ HomePage
-    setError("");
-    navigate("/"); // هنا التنقل
+    // setError("");
+    navigate("/");
   };
 
   return (
