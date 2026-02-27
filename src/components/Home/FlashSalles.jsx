@@ -12,7 +12,7 @@ const FlashSalles = () => {
 
   return (
     <div className="w-full h-screen flex flex-col gap-5 pt-26 pl-40 ">
-      {/*type,title*/}
+      
       <div className="flex items-center justify-between w-full pr-40">
         <HomeHeader type="Today’s" title="Flash Sales" />
         <CountdownTimer targetDate={dateTimeAfterThreeDays} />
@@ -21,97 +21,97 @@ const FlashSalles = () => {
         <div className="flex gap-20 pt-10 pl-20 ">
           <SalesCard
             //image, title, currentPrice, oldPrice, discount, rating, reviews
-             id={5}
+            id={5}
             image={img1}
-            title="Jorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra."
-            currentPrice="John Doe"
-            oldPrice="Youtuber"
+            title="car"
+            currentPrice="100"
+            oldPrice="140"
             discount="40%"
             rating="4"
             reviews="4"
           />
           <SalesCard
-           id={6}
+            id={6}
             image={img1}
-            title="Jorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra."
-            currentPrice="John Doe"
-            oldPrice="Youtuber"
+            title="car"
+            currentPrice="89"
+            oldPrice="120"
             discount="40%"
             rating="5"
             reviews="5"
           />
           <SalesCard
-           id={7}
+            id={7}
             image={img1}
-            title="Jorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra."
-            currentPrice="John Doe"
-            oldPrice="Youtuber"
+            title="car"
+            currentPrice="30"
+            oldPrice="200"
             discount="40%"
             rating="3"
             reviews="3"
           />
 
           <SalesCard
-           id={8}
+            id={8}
             image={img1}
-            title="Jorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra."
-            currentPrice="John Doe"
-            oldPrice="Youtuber"
+            title=" car"
+            currentPrice="100"
+            oldPrice="140"
             discount="40%"
             rating="3"
             reviews="3"
           />
 
           <SalesCard
-           id={9}
+            id={9}
             image={img1}
-            title="Jorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra."
-            currentPrice="John Doe"
-            oldPrice="Youtuber"
+            title=" car"
+            currentPrice="200"
+            oldPrice="250"
             discount="40%"
             rating="3"
             reviews="3"
           />
 
           <SalesCard
-           id={10}
+            id={10}
             image={img1}
-            title="Jorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra."
-            currentPrice="John Doe"
-            oldPrice="Youtuber"
+            title=" car"
+            currentPrice="170 "
+            oldPrice="203"
             discount="40"
             rating="3"
             reviews="3"
           />
 
           <SalesCard
-           id={11}
+            id={11}
             image={img1}
-            title="Jorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra."
-            currentPrice="John Doe"
-            oldPrice="Youtuber"
+            title=" car"
+            currentPrice="100"
+            oldPrice="140"
             discount="40"
             rating="3"
             reviews="3"
           />
 
           <SalesCard
-           id={12}
+            id={12}
             image={img1}
-            title="Jorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra."
-            currentPrice="John Doe"
-            oldPrice="Youtuber"
+            title=" car"
+            currentPrice="100"
+            oldPrice="140"
             discount="40"
             rating="3"
             reviews="3"
           />
 
           <SalesCard
-           id={13}
+            id={13}
             image={img1}
-            title="Jorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra."
-            currentPrice="John Doe"
-            oldPrice="Youtuber"
+            title=" car"
+            currentPrice="100"
+            oldPrice="140"
             discount="40"
             rating="3"
             reviews="3"

@@ -24,7 +24,7 @@ const Featured = () => {
           maxTextWidth="max-w-[70%]"
         />
 
-        {/* الكارد الأعلى يمين */}
+      
         <PromoCard
           imgSrc={img2}
           title="Women's Collections"
@@ -37,7 +37,7 @@ const Featured = () => {
           maxTextWidth="max-w-[70%]"
         />
 
-        {/* الكارد الأسفل يمين */}
+     
         <PromoCard
           imgSrc={img3}
           title="Speakers"

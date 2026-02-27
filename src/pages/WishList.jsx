@@ -19,7 +19,7 @@ const Wishlist = () => {
       <div className="w-[90%] max-w-5xl flex flex-col">
         <div className="flex justify-between items-center mb-6">
           <h2 className="text-2xl font-bold">Wishlist ({wishlist.length})</h2>
-          <button className="px-4 py-2 border-2 border-black rounded hover:bg-black hover:text-white transition">
+          <button className="px-4 py-2 border-2 cursor-pointer border-black rounded hover:bg-black hover:text-white transition">
             Move All To Bag
           </button>
         </div>
@@ -75,7 +75,7 @@ const Wishlist = () => {
           <HomeHeader type="just for you" title=" " />
           <button
             onClick={handleWithView}
-            className="px-4 py-2 border-2 border-black rounded hover:bg-black hover:text-white transition"
+            className="px-4 py-2 border-2 cursor-pointer border-black rounded hover:bg-black hover:text-white transition"
           >
             See All
           </button>

@@ -2,7 +2,7 @@ import { createRoot } from "react-dom/client";
 import { StrictMode } from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import WishlistContext from "./components/WishlistContext.jsx";
-
+import CartContext from "./components/CartContext.jsx";
 import Root from "./pages/Root.jsx";
 import AuthLayout from "./pages/AuthLayout.jsx";
 import HomePage from "./pages/Homepage.jsx";
@@ -33,7 +33,9 @@ const root = createRoot(document.getElementById("root"));
 root.render(
   <StrictMode>
     <WishlistContext>
-      <RouterProvider router={router} />
+      <CartContext>
+        <RouterProvider router={router} />
+      </CartContext>
     </WishlistContext>
   </StrictMode>,
 );

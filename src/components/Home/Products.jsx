@@ -13,11 +13,11 @@ const Products = () => {
       <div className="grid grid-cols-4 pt-20 gap-5 px-30">
         <SalesCard
           //image, title, currentPrice, oldPrice, discount, rating, reviews
-           id={14}
+          id={14}
           image={img1}
-          title="Jorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra."
-          currentPrice="John Doe"
-          oldPrice="Youtuber"
+          title="prudact"
+          currentPrice="100"
+          oldPrice="160"
           discount="40%"
           rating="4"
           reviews="4"
@@ -25,11 +25,11 @@ const Products = () => {
 
         <SalesCard
           //image, title, currentPrice, oldPrice, discount, rating, reviews
-           id={15}
+          id={15}
           image={img1}
-          title="Jorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra."
-          currentPrice="John Doe"
-          oldPrice="Youtuber"
+          title="prudact"
+          currentPrice="150"
+          oldPrice="160"
           discount="40%"
           rating="4"
           reviews="4"
@@ -37,11 +37,11 @@ const Products = () => {
 
         <SalesCard
           //image, title, currentPrice, oldPrice, discount, rating, reviews
-           id={16}
+          id={16}
           image={img1}
-          title="Jorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra."
-          currentPrice="John Doe"
-          oldPrice="Youtuber"
+          title="prudact"
+          currentPrice="150"
+          oldPrice="160"
           discount="40%"
           rating="4"
           reviews="4"
@@ -49,11 +49,11 @@ const Products = () => {
 
         <SalesCard
           //image, title, currentPrice, oldPrice, discount, rating, reviews
-           id={17}
+          id={17}
           image={img1}
-          title="Jorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra."
-          currentPrice="John Doe"
-          oldPrice="Youtuber"
+          title="prudact"
+          currentPrice="150"
+          oldPrice="160"
           discount="40%"
           rating="4"
           reviews="4"
@@ -61,11 +61,11 @@ const Products = () => {
 
         <SalesCard
           //image, title, currentPrice, oldPrice, discount, rating, reviews , active , colors
-           id={18}
+          id={18}
           image={img1}
-          title="Jorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra."
-          currentPrice="John Doe"
-          oldPrice="Youtuber"
+          title="prudact"
+          currentPrice="150"
+          oldPrice="160"
           discount="40%"
           rating="4"
           reviews="4"
@@ -77,9 +77,9 @@ const Products = () => {
           //image, title, currentPrice, oldPrice, discount, rating, reviews ,active,colors
           id={19}
           image={img2}
-          title="Jorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra."
-          currentPrice="John Doe"
-          oldPrice="Youtuber"
+          title="prudact"
+          currentPrice="150"
+          oldPrice="160"
           discount="40%"
           rating="4"
           reviews="4"
@@ -91,9 +91,9 @@ const Products = () => {
           //image, title, currentPrice, oldPrice, discount, rating, reviews
           id={20}
           image={img3}
-          title="Jorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra."
-          currentPrice="John Doe"
-          oldPrice="Youtuber"
+          title="prudact"
+          currentPrice="150"
+          oldPrice="160"
           discount="40%"
           rating="4"
           reviews="4"
@@ -105,9 +105,9 @@ const Products = () => {
           //image, title, currentPrice, oldPrice, discount, rating, reviews
           id={21}
           image={img1}
-          title="Jorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra."
-          currentPrice="John Doe"
-          oldPrice="Youtuber"
+          title="prudact"
+          currentPrice="150"
+          oldPrice="160"
           discount="40%"
           rating="4"
           reviews="4"

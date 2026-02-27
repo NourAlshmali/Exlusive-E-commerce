@@ -4,6 +4,7 @@ import { FiEye } from "react-icons/fi";
 import { FaStar } from "react-icons/fa";
 import HomeHeader from "../HomeHeader";
 import { WishlistContextData } from "../WishlistContext";
+import { CartContextData } from "../CartContext";
 
 const SalesCard = ({
   id,
@@ -26,9 +27,11 @@ const SalesCard = ({
   const getHeartClass = () => {
     return liked ? "bg-[#DB4444] text-[DB4444]" : "bg-white";
   };
+  const { cart, toggleCart, isInCart } = useContext(CartContextData);
+  const added = isInCart(id);
 
   return (
-    <div className="group flex flex-col gap-2 w-64">
+    <div className="group flex flex-col gap-2 min-w-64">
       <div className="relative bg-[#F5F5F5] rounded-md p-10 flex justify-center items-center overflow-hidden h-64">
         <span className="absolute top-3 left-3 bg-[#DB4444] text-white text-xs px-3 py-1 rounded">
           -{discount}
@@ -58,8 +61,27 @@ const SalesCard = ({
           alt={title}
           className="object-contain h-full w-full transform group-hover:scale-110 transition duration-300"
         />
-        <button className="absolute bottom-0 w-full bg-black cursor-pointer text-white py-2 opacity-0 group-hover:opacity-100 transition-opacity">
-          Add To Cart
+        <button
+          onClick={() =>
+            toggleCart({
+              id,
+              image,
+              title,
+              currentPrice,
+              oldPrice,
+              discount,
+              rating,
+              reviews,
+              colors,
+            })
+          }
+          className={`absolute bottom-0 w-full cursor-pointer py-2 transition-all duration-300 ${
+            added
+              ? "bg-red-600 text-white opacity-100"
+              : "bg-black text-white opacity-0 group-hover:opacity-100"
+          }`}
+        >
+          {added ? "Remove From Cart" : "Add To Cart"}
         </button>
       </div>
 
