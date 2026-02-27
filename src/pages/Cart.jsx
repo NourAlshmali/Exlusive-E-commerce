@@ -8,7 +8,13 @@ import { CartContextData } from "../components/CartContext";
 const Cart = () => {
   const navigate = useNavigate();
   const {
-    cart,setCart, toggleCart,isInCart,updateQuantity, removeFromCart,} = useContext(CartContextData);
+    cart,
+    setCart,
+    toggleCart,
+    isInCart,
+    updateQuantity,
+    removeFromCart,
+  } = useContext(CartContextData);
 
   const totalPrice = cart.reduce((acc, item) => {
     return acc + item.currentPrice * item.quantity;
@@ -46,14 +52,18 @@ const Cart = () => {
                 <td>${item.currentPrice}</td>
 
                 <td>
-                  <input
-                    type="number"
-                    value={item.quantity}
-                    onChange={(e) =>
-                      updateQuantity(item.id, parseInt(e.target.value))
-                    }
-                    className="w-16 border rounded px-2 py-1"
-                  />
+                 <input
+                    type="number" value={item.quantity}
+               onChange={(e) => { const val = parseInt(e.target.value);
+
+               if (val >= 1) {
+                  updateQuantity(item.id, val); 
+                 } else {
+                removeFromCart(item.id); 
+    }
+  }}
+  className="w-16 border rounded px-2 py-1"
+/>
                 </td>
 
                 <td className="text-right">
@@ -98,7 +108,10 @@ const Cart = () => {
               <p>{totalPrice}$</p>
             </div>
 
-            <button className="border-2 w-45 h-12 self-center my-10 mt-4 cursor-pointer bg-[#DB4444] text-white hover:bg-red-400">
+            <button
+              onClick={() => navigate("/checkout")}
+              className="border-2 w-45 h-12 self-center my-10 mt-4 cursor-pointer bg-[#DB4444] text-white hover:bg-red-400"
+            >
               Procees to checkout
             </button>
           </div>

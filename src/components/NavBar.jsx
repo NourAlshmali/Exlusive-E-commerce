@@ -19,14 +19,13 @@ const NavBar = () => {
   const navigate = useNavigate();
   const { wishlist } = useContext(WishlistContextData);
 
-
   const [showSearch, setShowSearch] = useState(false);
   const [account, setAccount] = useState(false);
 
   const NavTabs = [
     { id: 1, tab: "Home", path: "/" },
     { id: 2, tab: "Contact" },
-    { id: 3, tab: "About" },
+    { id: 3, tab: "About", path: "/About" },
     { id: 4, tab: "Sign Up", path: "/signup" },
   ];
 
@@ -37,7 +36,12 @@ const NavBar = () => {
     { id: 4, tab: <IoPersonOutline />, type: "account" },
   ];
   const accountDropDown = [
-    { id: 1, label: "Manage My Account", icon: <FaUserCircle size={16} /> },
+    {
+      id: 1,
+      label: "Manage My Account",
+      icon: <FaUserCircle size={16} />,
+      path: "/account",
+    },
     { id: 2, label: "My Orders", icon: <FaBoxOpen size={16} /> },
     { id: 3, label: "My Cancellations", icon: <FaTimesCircle size={16} /> },
     { id: 4, label: "My Reviews", icon: <FaStar size={16} /> },
@@ -113,16 +117,16 @@ const NavBar = () => {
                 icon.tab
               )}
 
-         {icon.type === "heart" && wishlist.length > 0 && (
-            <span className="absolute -top-2 -right-2 bg-red-500 text-white text-[12px] w-5 h-5 flex items-center justify-center rounded-full">
-             {wishlist.length}
-              </span>
-)}
-
+              {icon.type === "heart" && wishlist.length > 0 && (
+                <span className="absolute -top-2 -right-2 bg-red-500 text-white text-[12px] w-5 h-5 flex items-center justify-center rounded-full">
+                  {wishlist.length}
+                </span>
+              )}
 
               {icon.type === "account" && account && (
                 <AccountDropdown items={accountDropDown} />
               )}
+              {icon.label == ""}
             </li>
           ))}
         </ul>
