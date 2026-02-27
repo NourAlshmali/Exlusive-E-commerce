@@ -33,7 +33,7 @@ const NavBar = () => {
   const NavIcons = [
     { id: 1, tab: <CiSearch />, type: "search" },
     { id: 2, tab: <CiHeart />, type: "heart", path: "/wishlist" },
-    { id: 3, tab: <CiShoppingCart />, type: "cart" },
+    { id: 3, tab: <CiShoppingCart />, type: "cart", path: "/cart" },
     { id: 4, tab: <IoPersonOutline />, type: "account" },
   ];
   const accountDropDown = [

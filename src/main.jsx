@@ -9,6 +9,7 @@ import HomePage from "./pages/Homepage.jsx";
 import SignUp from "./pages/SignUp.jsx";
 import Login from "./pages/Login.jsx";
 import Wishlist from "./pages/WishList.jsx";
+import Cart from "./pages/Cart.jsx";
 
 const router = createBrowserRouter([
   {
@@ -16,6 +17,7 @@ const router = createBrowserRouter([
     children: [
       { index: true, element: <HomePage /> },
       { path: "wishlist", element: <Wishlist /> },
+      { path: "cart", element: <Cart /> },
     ],
   },
   {
@@ -33,5 +35,5 @@ root.render(
     <WishlistContext>
       <RouterProvider router={router} />
     </WishlistContext>
-  </StrictMode>
+  </StrictMode>,
 );
