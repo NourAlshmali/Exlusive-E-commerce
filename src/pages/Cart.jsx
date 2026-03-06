@@ -9,9 +9,6 @@ const Cart = () => {
   const navigate = useNavigate();
   const {
     cart,
-    setCart,
-    toggleCart,
-    isInCart,
     updateQuantity,
     removeFromCart,
   } = useContext(CartContextData);
@@ -122,4 +119,3 @@ const Cart = () => {
 };
 
 export default Cart;
-6;

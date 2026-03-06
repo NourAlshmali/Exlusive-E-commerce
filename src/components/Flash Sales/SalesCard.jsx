@@ -20,14 +20,14 @@ const SalesCard = ({
   //  colors={["#FFAD33", "#1E40AF", "#16A34A"]}
   colors = [],
 }) => {
-  const { wishlist, toggleWishlist, isInWishlist } =
+  const {  toggleWishlist, isInWishlist } =
     useContext(WishlistContextData);
   const liked = isInWishlist(id);
 
   const getHeartClass = () => {
     return liked ? "bg-[#DB4444] text-[DB4444]" : "bg-white";
   };
-  const { cart, toggleCart, isInCart } = useContext(CartContextData);
+  const {  toggleCart, isInCart } = useContext(CartContextData);
   const added = isInCart(id);
 
   return (

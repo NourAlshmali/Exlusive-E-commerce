@@ -1,11 +1,9 @@
 import React, { useContext } from "react";
 import { CartContextData } from "../components/CartContext";
-import { useNavigate } from "react-router-dom";
 import Breadcrumb from "../components/Breadcrumb";
 
 const Checkout = () => {
   const { cart } = useContext(CartContextData);
-  const navigate = useNavigate();
 
   const totalPrice = cart.reduce((acc, item) => {
     return acc + item.currentPrice * item.quantity;
@@ -58,9 +56,9 @@ const Checkout = () => {
           </div>
         </div>
 
-        {/* ================= RIGHT SIDE (Order Summary) ================= */}
+      
         <div className="space-y-6">
-          {/* Products */}
+      
           {cart.map((item) => (
             <div key={item.id} className="flex justify-between items-center">
               <div className="flex items-center gap-4">
@@ -74,7 +72,7 @@ const Checkout = () => {
             </div>
           ))}
 
-          {/* Totals */}
+      
           <div className="border-t pt-4 space-y-4">
             <div className="flex justify-between">
               <p>Subtotal:</p>

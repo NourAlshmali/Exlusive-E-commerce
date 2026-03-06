@@ -4,7 +4,7 @@ import Countdown from "react-countdown";
 const TimeUnit = ({ label, value, variant = "default" }) => {
   const isCircle = variant === "circle";
 
-  // الوضع العادي (مثل قبل)
+ 
   if (!isCircle) {
     return (
       <div className="flex flex-col items-center">
@@ -18,7 +18,7 @@ const TimeUnit = ({ label, value, variant = "default" }) => {
     );
   }
 
-  // الوضع الدائري
+
   return (
     <div className="flex flex-col items-center">
       <div className="w-14 h-14 rounded-full bg-white border-2 border-white flex flex-col items-center justify-center">
@@ -32,7 +32,7 @@ const TimeUnit = ({ label, value, variant = "default" }) => {
     </div>
   );
 };
-/* ===== Separator ===== */
+
 const Separator = () => (
   <div className="flex flex-col justify-end pb-1 h-[60px]">
     <div className="flex flex-col gap-2">
@@ -42,7 +42,7 @@ const Separator = () => (
   </div>
 );
 
-/* ===== Countdown Timer ===== */
+
 const CountdownTimer = ({ targetDate, variant = "default" }) => {
   const renderer = ({ days, hours, minutes, seconds, completed }) => {
     if (completed) {

@@ -10,112 +10,101 @@ const FlashSalles = () => {
   const NOW_IN_MS = new Date().getTime(); //يأخذ الوقت الحالي (تاريخ + الوقت) ويحوّله لـ ميللي ثانية
   const dateTimeAfterThreeDays = NOW_IN_MS + THREE_DAYS_IN_MS; //يعطينا تاريخ + وقت بعد 3 أيام من الآن (بميللي ثانية).
 
+  const flashSalles = [
+    {
+      id: 7,
+      image: img1,
+      title: "car",
+      currentPrice: "30",
+      oldPrice: "200",
+      discount: "40%",
+      rating: "3",
+      reviews: "3",
+    },
+    {
+      id: 8,
+      image: img1,
+      title: "car",
+      currentPrice: "100",
+      oldPrice: "140",
+      discount: "40%",
+      rating: "3",
+      reviews: "3",
+    },
+    {
+      id: 9,
+      image: img1,
+      title: "car",
+      currentPrice: "200",
+      oldPrice: "250",
+      discount: "40%",
+      rating: "3",
+      reviews: "3",
+    },
+    {
+      id: 10,
+      image: img1,
+      title: "car",
+      currentPrice: "170",
+      oldPrice: "203",
+      discount: "40",
+      rating: "3",
+      reviews: "3",
+    },
+    {
+      id: 11,
+      image: img1,
+      title: "car",
+      currentPrice: "100",
+      oldPrice: "140",
+      discount: "40",
+      rating: "3",
+      reviews: "3",
+    },
+    {
+      id: 12,
+      image: img1,
+      title: "car",
+      currentPrice: "100",
+      oldPrice: "140",
+      discount: "40",
+      rating: "3",
+      reviews: "3",
+    },
+    {
+      id: 13,
+      image: img1,
+      title: "car",
+      currentPrice: "100",
+      oldPrice: "140",
+      discount: "40",
+      rating: "3",
+      reviews: "3",
+    },
+  ];
+
   return (
     <div className="w-full h-screen flex flex-col gap-5 pt-26 pl-40 ">
-      
       <div className="flex items-center justify-between w-full pr-40">
         <HomeHeader type="Today’s" title="Flash Sales" />
         <CountdownTimer targetDate={dateTimeAfterThreeDays} />
       </div>
       <div className="w-full overflow-x-auto no-scrollbar">
         <div className="flex gap-20 pt-10 pl-20 ">
-          <SalesCard
-            //image, title, currentPrice, oldPrice, discount, rating, reviews
-            id={5}
-            image={img1}
-            title="car"
-            currentPrice="100"
-            oldPrice="140"
-            discount="40%"
-            rating="4"
-            reviews="4"
-          />
-          <SalesCard
-            id={6}
-            image={img1}
-            title="car"
-            currentPrice="89"
-            oldPrice="120"
-            discount="40%"
-            rating="5"
-            reviews="5"
-          />
-          <SalesCard
-            id={7}
-            image={img1}
-            title="car"
-            currentPrice="30"
-            oldPrice="200"
-            discount="40%"
-            rating="3"
-            reviews="3"
-          />
-
-          <SalesCard
-            id={8}
-            image={img1}
-            title=" car"
-            currentPrice="100"
-            oldPrice="140"
-            discount="40%"
-            rating="3"
-            reviews="3"
-          />
-
-          <SalesCard
-            id={9}
-            image={img1}
-            title=" car"
-            currentPrice="200"
-            oldPrice="250"
-            discount="40%"
-            rating="3"
-            reviews="3"
-          />
-
-          <SalesCard
-            id={10}
-            image={img1}
-            title=" car"
-            currentPrice="170 "
-            oldPrice="203"
-            discount="40"
-            rating="3"
-            reviews="3"
-          />
-
-          <SalesCard
-            id={11}
-            image={img1}
-            title=" car"
-            currentPrice="100"
-            oldPrice="140"
-            discount="40"
-            rating="3"
-            reviews="3"
-          />
-
-          <SalesCard
-            id={12}
-            image={img1}
-            title=" car"
-            currentPrice="100"
-            oldPrice="140"
-            discount="40"
-            rating="3"
-            reviews="3"
-          />
-
-          <SalesCard
-            id={13}
-            image={img1}
-            title=" car"
-            currentPrice="100"
-            oldPrice="140"
-            discount="40"
-            rating="3"
-            reviews="3"
-          />
+          {flashSalles.map((sale) => (
+            <SalesCard
+              //image, title, currentPrice, oldPrice, discount, rating, reviews
+              key={sale.id}
+              id={sale.id}
+              image={sale.image}
+              title={sale.title}
+              currentPrice={sale.currentPrice}
+              oldPrice={sale.oldPrice}
+              discount={sale.discount}
+              rating={sale.rating}
+              reviews={sale.reviews}
+            />
+          ))}
         </div>
       </div>
       <div className="flex self-center">

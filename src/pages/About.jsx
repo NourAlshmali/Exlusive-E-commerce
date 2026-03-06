@@ -1,7 +1,6 @@
-import React from "react";
+
 import Breadcrumb from "../components/Breadcrumb";
 import img2 from "/img/AboutImage.png";
-import Categories from "../components/Home/Categories";
 import { CiCamera, CiMobile4 } from "react-icons/ci";
 import { BsSmartwatch } from "react-icons/bs";
 import { HiOutlineDesktopComputer } from "react-icons/hi";
