@@ -2,9 +2,9 @@ import React, { useContext } from "react";
 import { CiHeart } from "react-icons/ci";
 import { FiEye } from "react-icons/fi";
 import { FaStar } from "react-icons/fa";
-import HomeHeader from "../HomeHeader";
-import { WishlistContextData } from "../WishlistContext";
-import { CartContextData } from "../CartContext";
+import HomeHeader from "./HomeHeader";
+import { WishlistContextData } from "./WishlistContext";
+import { CartContextData } from "./CartContext";
 
 const SalesCard = ({
   id,
@@ -20,14 +20,13 @@ const SalesCard = ({
   //  colors={["#FFAD33", "#1E40AF", "#16A34A"]}
   colors = [],
 }) => {
-  const {  toggleWishlist, isInWishlist } =
-    useContext(WishlistContextData);
+  const { toggleWishlist, isInWishlist } = useContext(WishlistContextData);
   const liked = isInWishlist(id);
 
   const getHeartClass = () => {
     return liked ? "bg-[#DB4444] text-[DB4444]" : "bg-white";
   };
-  const {  toggleCart, isInCart } = useContext(CartContextData);
+  const { toggleCart, isInCart } = useContext(CartContextData);
   const added = isInCart(id);
 
   return (

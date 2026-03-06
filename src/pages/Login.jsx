@@ -60,7 +60,7 @@ const Login = () => {
       {/* الأحمر عند دخول الصفحة */}
       <div
         className={`absolute top-0 right-0 h-full bg-red-500 z-20
-          transition-all duration-[1200ms] ease-in-out
+          transition-all duration-1200 ease-in-out
           ${hideRed ? "w-0" : "w-full"}
         `}
       ></div>
@@ -82,7 +82,7 @@ const Login = () => {
           shadow-[0_0_15px_rgba(239,68,68,0.7)]
         "
       >
-        {/* الفورم */}
+        
         <div
           className={`flex-1 flex flex-col justify-center pl-50 pt-20 gap-6
             transition-all duration-700 ease-in-out
@@ -161,7 +161,7 @@ const Login = () => {
                     ${hideContent ? "translate-x-40 opacity-0" : "opacity-100"}
                   `}
                 >
-                  <img src={img} className="w-[700px]" />
+                  <img src={img} className="w-175" />
                 </div>
       </div>
     </div>

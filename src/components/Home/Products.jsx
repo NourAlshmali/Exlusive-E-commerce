@@ -1,22 +1,101 @@
 import React from "react";
 import HomeHeader from "../HomeHeader";
-import SalesCard from "../Flash Sales/SalesCard";
+import SalesCard from "../SalesCard";
 import img1 from "/img/p1.png";
 import img2 from "/img/p2.png";
 import img3 from "/img/p3.png";
 import ViewAllButton from "../ViewAllButton";
 
 const Products = () => {
-
   const productsData = [
-    { id: 14, image: img1, title: "product", currentPrice: "100", oldPrice: "160", discount: "40%", rating: "4", reviews: "4" },
-    { id: 15, image: img1, title: "product", currentPrice: "150", oldPrice: "160", discount: "40%", rating: "4", reviews: "4" },
-    { id: 16, image: img1, title: "product", currentPrice: "150", oldPrice: "160", discount: "40%", rating: "4", reviews: "4" },
-    { id: 17, image: img1, title: "product", currentPrice: "150", oldPrice: "160", discount: "40%", rating: "4", reviews: "4" },
-    { id: 18, image: img1, title: "product", currentPrice: "150", oldPrice: "160", discount: "40%", rating: "4", reviews: "4", active: true, colors: ["#ffffff", "#EEFF61"] },
-    { id: 19, image: img2, title: "product", currentPrice: "150", oldPrice: "160", discount: "40%", rating: "4", reviews: "4", active: true, colors: ["#DB4444", "#EEFF61"] },
-    { id: 20, image: img3, title: "product", currentPrice: "150", oldPrice: "160", discount: "40%", rating: "4", reviews: "4", active: true, colors: ["#000000", "#DB4444"] },
-    { id: 21, image: img1, title: "product", currentPrice: "150", oldPrice: "160", discount: "40%", rating: "4", reviews: "4", active: true, colors: ["#000000", "#EEFF61"] },
+    {
+      id: 14,
+      image: img1,
+      title: "product",
+      currentPrice: "100",
+      oldPrice: "160",
+      discount: "40%",
+      rating: "4",
+      reviews: "4",
+    },
+    {
+      id: 15,
+      image: img1,
+      title: "product",
+      currentPrice: "150",
+      oldPrice: "160",
+      discount: "40%",
+      rating: "4",
+      reviews: "4",
+    },
+    {
+      id: 16,
+      image: img1,
+      title: "product",
+      currentPrice: "150",
+      oldPrice: "160",
+      discount: "40%",
+      rating: "4",
+      reviews: "4",
+    },
+    {
+      id: 17,
+      image: img1,
+      title: "product",
+      currentPrice: "150",
+      oldPrice: "160",
+      discount: "40%",
+      rating: "4",
+      reviews: "4",
+    },
+    {
+      id: 18,
+      image: img1,
+      title: "product",
+      currentPrice: "150",
+      oldPrice: "160",
+      discount: "40%",
+      rating: "4",
+      reviews: "4",
+      active: true,
+      colors: ["#ffffff", "#EEFF61"],
+    },
+    {
+      id: 19,
+      image: img2,
+      title: "product",
+      currentPrice: "150",
+      oldPrice: "160",
+      discount: "40%",
+      rating: "4",
+      reviews: "4",
+      active: true,
+      colors: ["#DB4444", "#EEFF61"],
+    },
+    {
+      id: 20,
+      image: img3,
+      title: "product",
+      currentPrice: "150",
+      oldPrice: "160",
+      discount: "40%",
+      rating: "4",
+      reviews: "4",
+      active: true,
+      colors: ["#000000", "#DB4444"],
+    },
+    {
+      id: 21,
+      image: img1,
+      title: "product",
+      currentPrice: "150",
+      oldPrice: "160",
+      discount: "40%",
+      rating: "4",
+      reviews: "4",
+      active: true,
+      colors: ["#000000", "#EEFF61"],
+    },
   ];
 
   return (
@@ -26,7 +105,7 @@ const Products = () => {
         {productsData.map((product) => (
           <SalesCard
             key={product.id}
-            id={product.id} 
+            id={product.id}
             image={product.image}
             title={product.title}
             currentPrice={product.currentPrice}

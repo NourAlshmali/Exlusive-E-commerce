@@ -3,7 +3,7 @@ import { WishlistContextData } from "../components/WishlistContext";
 import { useNavigate } from "react-router-dom";
 import { CiTrash } from "react-icons/ci";
 import HomeHeader from "../components/HomeHeader";
-import SalesCard from "../components/Flash Sales/SalesCard";
+import SalesCard from "../components/SalesCard";
 import img1 from "/img/best.png";
 import img2 from "/img/best2.png";
 

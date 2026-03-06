@@ -1,7 +1,7 @@
 import React from "react";
 import CountdownTimer from "../Flash Sales/CountdownTimer";
 import img1 from "/img/sales.png";
-import SalesCard from "../Flash Sales/SalesCard";
+import SalesCard from "../SalesCard";
 import HomeHeader from "../HomeHeader";
 import ViewAllButton from "../ViewAllButton";
 
@@ -11,76 +11,13 @@ const FlashSalles = () => {
   const dateTimeAfterThreeDays = NOW_IN_MS + THREE_DAYS_IN_MS; //يعطينا تاريخ + وقت بعد 3 أيام من الآن (بميللي ثانية).
 
   const flashSalles = [
-    {
-      id: 7,
-      image: img1,
-      title: "car",
-      currentPrice: "30",
-      oldPrice: "200",
-      discount: "40%",
-      rating: "3",
-      reviews: "3",
-    },
-    {
-      id: 8,
-      image: img1,
-      title: "car",
-      currentPrice: "100",
-      oldPrice: "140",
-      discount: "40%",
-      rating: "3",
-      reviews: "3",
-    },
-    {
-      id: 9,
-      image: img1,
-      title: "car",
-      currentPrice: "200",
-      oldPrice: "250",
-      discount: "40%",
-      rating: "3",
-      reviews: "3",
-    },
-    {
-      id: 10,
-      image: img1,
-      title: "car",
-      currentPrice: "170",
-      oldPrice: "203",
-      discount: "40",
-      rating: "3",
-      reviews: "3",
-    },
-    {
-      id: 11,
-      image: img1,
-      title: "car",
-      currentPrice: "100",
-      oldPrice: "140",
-      discount: "40",
-      rating: "3",
-      reviews: "3",
-    },
-    {
-      id: 12,
-      image: img1,
-      title: "car",
-      currentPrice: "100",
-      oldPrice: "140",
-      discount: "40",
-      rating: "3",
-      reviews: "3",
-    },
-    {
-      id: 13,
-      image: img1,
-      title: "car",
-      currentPrice: "100",
-      oldPrice: "140",
-      discount: "40",
-      rating: "3",
-      reviews: "3",
-    },
+    { id: 7, image: img1, title: "car", currentPrice: "30", oldPrice: "200", discount: "40%", rating: "3", reviews: "3", },
+    { id: 8, image: img1, title: "car", currentPrice: "100", oldPrice: "140", discount: "40%", rating: "3", reviews: "3", },
+    { id: 9, image: img1, title: "car", currentPrice: "200", oldPrice: "250", discount: "40%", rating: "3", reviews: "3", },
+    { id: 10, image: img1, title: "car", currentPrice: "170", oldPrice: "203", discount: "40", rating: "3", reviews: "3", },
+    { id: 11, image: img1, title: "car", currentPrice: "100", oldPrice: "140", discount: "40", rating: "3", reviews: "3", },
+    { id: 12, image: img1, title: "car", currentPrice: "100", oldPrice: "140", discount: "40", rating: "3", reviews: "3", },
+    { id: 13, image: img1, title: "car", currentPrice: "100", oldPrice: "140", discount: "40", rating: "3", reviews: "3", },
   ];
 
   return (
