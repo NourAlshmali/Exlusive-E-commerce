@@ -2,7 +2,7 @@ import React from "react";
 import { Outlet } from "react-router-dom";
 import "../index.css"; 
 
-import NavBar from "../components/NavBar";
+import NavBar from "../components/Nav/NavBar";
 import Footer from "../components/Footer";
 
 

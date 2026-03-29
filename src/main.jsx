@@ -13,6 +13,7 @@ import Cart from "./pages/Cart.jsx";
 import Checkout from "./pages/Checkout.jsx";
 import Account from "./pages/Account.jsx";
 import About from "./pages/About.jsx";
+import ContactPage from "./pages/ContactPage.jsx";
 
 const router = createBrowserRouter([
   {
@@ -24,6 +25,7 @@ const router = createBrowserRouter([
       { path: "checkout", element: <Checkout /> },
       { path: "account", element: <Account /> },
       { path: "About", element: <About /> },
+      { path: "Contact", element: <ContactPage /> },
     ],
   },
   {

@@ -12,7 +12,7 @@ const ProfileForm = () => {
             <input
               type="text"
               placeholder="Md"
-              className="bg-gray-100 p-3 rounded focus:outline-none focus:ring-1 focus:ring-red-500"
+              className="bg-gray-100 p-3 rounded  focus:ring-1 focus:ring-red-500"
             />
           </div>
           <div className="flex flex-col gap-2">
@@ -20,7 +20,7 @@ const ProfileForm = () => {
             <input
               type="text"
               placeholder="Rimel"
-              className="bg-gray-100 p-3 rounded focus:outline-none focus:ring-1 focus:ring-red-500"
+              className="bg-gray-100 p-3 rounded  focus:ring-1 focus:ring-red-500"
             />
           </div>
         </div>
@@ -31,7 +31,7 @@ const ProfileForm = () => {
             <input
               type="email"
               placeholder="rimel1111@gmail.com"
-              className="bg-gray-100 p-3 rounded focus:outline-none focus:ring-1 focus:ring-red-500"
+              className="bg-gray-100 p-3 rounded  focus:ring-1 focus:ring-red-500"
             />
           </div>
           <div className="flex flex-col gap-2">
@@ -39,7 +39,7 @@ const ProfileForm = () => {
             <input
               type="text"
               placeholder="Kingston, 5236, United State"
-              className="bg-gray-100 p-3 rounded focus:outline-none focus:ring-1 focus:ring-red-500"
+              className="bg-gray-100 p-3 rounded  focus:ring-1 focus:ring-red-500"
             />
           </div>
         </div>
@@ -49,22 +49,22 @@ const ProfileForm = () => {
           <input
             type="password"
             placeholder="Current Password"
-            className="w-full bg-gray-100 p-3 rounded focus:outline-none focus:ring-1 focus:ring-red-500"
+            className="w-full bg-gray-100 p-3 rounded  focus:ring-1 focus:ring-red-500"
           />
           <input
             type="password"
             placeholder="New Password"
-            className="w-full bg-gray-100 p-3 rounded focus:outline-none focus:ring-1 focus:ring-red-500"
+            className="w-full bg-gray-100 p-3 rounded  focus:ring-1 focus:ring-red-500"
           />
           <input
             type="password"
             placeholder="Confirm New Password"
-            className="w-full bg-gray-100 p-3 rounded focus:outline-none focus:ring-1 focus:ring-red-500"
+            className="w-full bg-gray-100 p-3 rounded  focus:ring-1 focus:ring-red-500"
           />
         </div>
 
         <div className="flex justify-end items-center gap-6 mt-8">
-          <button type="button" className="text-sm font-medium hover:underline">
+          <button type="button" className="text-sm font-medium cursor-pointer">
             Cancel
           </button>
           <button

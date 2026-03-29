@@ -1,6 +1,6 @@
 import React from "react";
-import Sidebar from "../components/Sidebar";
-import ProfileForm from "../components/ProfileForm";
+import Sidebar from "../components/Account/Sidebar";
+import ProfileForm from "../components/Account/ProfileForm";
 import Breadcrumb from "../components/Breadcrumb";
 
 const AccountPage = () => {

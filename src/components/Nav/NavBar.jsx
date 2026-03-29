@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { WishlistContextData } from "../components/WishlistContext";
+import { WishlistContextData } from "../WishlistContext";
 import TopNav from "./TopNav";
 import { CiSearch, CiHeart, CiShoppingCart } from "react-icons/ci";
 import { IoPersonOutline } from "react-icons/io5";
@@ -13,7 +13,7 @@ import {
   FaSignOutAlt,
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import Wishlist from "../pages/WishList";
+import Wishlist from "../../pages/WishList";
 
 const NavBar = () => {
   const navigate = useNavigate();
@@ -24,7 +24,7 @@ const NavBar = () => {
 
   const NavTabs = [
     { id: 1, tab: "Home", path: "/" },
-    { id: 2, tab: "Contact" },
+    { id: 2, tab: "Contact", path: "/Contact" },
     { id: 3, tab: "About", path: "/About" },
     { id: 4, tab: "Sign Up", path: "/signup" },
   ];
