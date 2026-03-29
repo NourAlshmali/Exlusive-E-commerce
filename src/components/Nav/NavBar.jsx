@@ -1,6 +1,8 @@
 import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { WishlistContextData } from "../WishlistContext";
+import { CartContextData } from "../CartContext";
+
 import TopNav from "./TopNav";
 import { CiSearch, CiHeart, CiShoppingCart } from "react-icons/ci";
 import { IoPersonOutline } from "react-icons/io5";
@@ -14,10 +16,12 @@ import {
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import Wishlist from "../../pages/WishList";
+import Cart from "../../pages/Cart";
 
 const NavBar = () => {
   const navigate = useNavigate();
   const { wishlist } = useContext(WishlistContextData);
+  const { cart } = useContext(CartContextData);
 
   const [showSearch, setShowSearch] = useState(false);
   const [account, setAccount] = useState(false);
@@ -120,6 +124,12 @@ const NavBar = () => {
               {icon.type === "heart" && wishlist.length > 0 && (
                 <span className="absolute -top-2 -right-2 bg-red-500 text-white text-[12px] w-5 h-5 flex items-center justify-center rounded-full">
                   {wishlist.length}
+                </span>
+              )}
+
+              {icon.type === "cart" && cart.length > 0 && (
+                <span className="absolute -top-2 -right-2 bg-red-500 text-white text-[12px] w-5 h-5 flex items-center justify-center rounded-full">
+                  {cart.length}
                 </span>
               )}
 

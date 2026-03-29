@@ -17,7 +17,7 @@ const CartContext = ({ children }) => {
   };
   const updateQuantity = (id, amount) => {
     setCart (cart.map((item) => item.id === id ? { ...item, quantity: amount } : item));
-    //غير فقط قيمة الكمية 
+    
   };
 
   return (

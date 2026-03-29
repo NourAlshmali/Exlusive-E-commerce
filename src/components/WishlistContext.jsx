@@ -20,7 +20,7 @@ const WishlistContext = ({ children }) => {
 
   return (
     <WishlistContextData.Provider
-      value={{ wishlist, toggleWishlist, isInWishlist }}
+      value={{ wishlist, toggleWishlist, isInWishlist , setWishlist }}
     >
       {children}
     </WishlistContextData.Provider>
