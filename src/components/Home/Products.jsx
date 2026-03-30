@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import HomeHeader from "../HomeHeader";
 import SalesCard from "../SalesCard";
 import img1 from "/img/p1.png";
@@ -98,28 +98,76 @@ const Products = () => {
     },
   ];
 
+  const [currentPage, setCurrentPage] = useState(1);
+  const productsPerPage = 2;
+
+  const indexOfLastProduct = currentPage * productsPerPage;
+  const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
+  const totalPages = Math.ceil(productsData.length / productsPerPage);
+
   return (
-    <div className="w-full min-h-screen pt-10 md:pt-20 flex flex-col px-4 md:pl-40">
-      <HomeHeader type="Our Products" title="Explore Our Products" />
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 pt-10 md:pt-20 gap-4 md:gap-5 px-4 md:px-30">
-        {productsData.map((product) => (
-          <SalesCard
+    // تم استبدال pl-40 بـ mx-auto و max-w لتوسط المحتوى بشكل سليم في اللابتوب
+    <div className="w-full min-h-screen pt-10 md:pt-20 flex flex-col items-center px-4 md:px-10 lg:px-20 max-w-[1440px] mx-auto">
+      {/* هيدر الصفحة */}
+      <div className="w-full">
+        <HomeHeader type="Our Products" title="Explore Our Products" />
+      </div>
+
+      {/* تحسين الـ Grid: 
+          1 في الموبايل، 
+          2 في التابلت (sm:grid-cols-2)، 
+          4 في اللابتوب (lg:grid-cols-4) 
+      */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 w-full pt-10 md:pt-16 gap-6 lg:gap-8">
+        {productsData.map((product, index) => (
+          <div
             key={product.id}
-            id={product.id}
-            image={product.image}
-            title={product.title}
-            currentPrice={product.currentPrice}
-            oldPrice={product.oldPrice}
-            discount={product.discount}
-            rating={product.rating}
-            reviews={product.reviews}
-            active={product.active}
-            colors={product.colors}
-          />
+            className={`${
+              index < indexOfFirstProduct || index >= indexOfLastProduct
+                ? "hidden md:block" // يبقى المنطق كما هو للموبايل
+                : "block"
+            }`}
+          >
+            <SalesCard
+              id={product.id}
+              image={product.image}
+              title={product.title}
+              currentPrice={product.currentPrice}
+              oldPrice={product.oldPrice}
+              discount={product.discount}
+              rating={product.rating}
+              reviews={product.reviews}
+              active={product.active}
+              colors={product.colors}
+            />
+          </div>
         ))}
       </div>
 
-      <div className="flex self-center mt-10">
+      {/* Pagination للموبايل فقط */}
+      <div className="flex md:hidden justify-center items-center gap-4 mt-8">
+        <button
+          onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
+          disabled={currentPage === 1}
+          className="px-4 py-2 rounded-md bg-gray-200 text-gray-700 disabled:opacity-50"
+        >
+          Prev
+        </button>
+        <span className="text-sm font-medium">
+          {currentPage} / {totalPages}
+        </span>
+        <button
+          onClick={() =>
+            setCurrentPage((prev) => Math.min(prev + 1, totalPages))
+          }
+          disabled={currentPage === totalPages}
+          className="px-4 py-2 rounded-md bg-gray-200 text-gray-700 disabled:opacity-50"
+        >
+          Next
+        </button>
+      </div>
+
+      <div className="mt-12 md:mt-16 pb-10">
         <ViewAllButton />
       </div>
     </div>

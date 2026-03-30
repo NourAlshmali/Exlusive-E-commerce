@@ -13,6 +13,10 @@ const SignUp = () => {
   const [hideRed, setHideRed] = useState(false);
   const [fillRed, setFillRed] = useState(false);
 
+  const [name, setName] = useState("");
+  const [number, setNumber] = useState("");
+  const [password, setPassword] = useState("");
+
   useEffect(() => {
     const timer = setTimeout(() => {
       setHideRed(true);
@@ -20,158 +24,160 @@ const SignUp = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  const handleWithCreate = () => {
+  const handleTransition = (targetPath) => {
     setHideContent(true);
-
-    // بعد ما يختفي الفورم + الصورة
     setTimeout(() => {
-      setFillRed(true); // الأحمر يبلش يغطي الشاشة بالكامل
+      setFillRed(true);
     }, 100);
     setTimeout(() => {
-      navigate("/");
-    }, 1300);
-  };
-
-  const handleSignUpClick = () => {
-    setHideContent(true);
-
-    // بعد ما يختفي الفورم + الصورة
-    setTimeout(() => {
-      setFillRed(true); // الأحمر يبلش يغطي الشاشة بالكامل
-    }, 100);
-    setTimeout(() => {
-      navigate("/login");
+      navigate(targetPath);
     }, 1300);
   };
 
   const handleSubmit = (e) => {
-    e.preventDefault(); // يمنع إعادة تحميل الصفحة
-    navigate("/"); // بعد تسجيل الدخول، يتم التوجيه إلى الصفحة الرئيسية
+    e.preventDefault();
+    handleTransition("/");
   };
 
-  const [name, setName] = useState("");
-  const [number, setNumber] = useState("");
-  const [password, setPassword] = useState("");
-
   return (
-    <div
-      className="flex flex-col lg:flex-row w-full h-screen relative z-10
-          bg-[linear-gradient(115deg,#ffffff_60%,#ef4444_60%)]
-          border-4 border-red-500
-          shadow-[0_0_15px_rgba(239,68,68,0.7)]"
-    >
+    <div className="relative w-full h-screen overflow-hidden flex bg-white">
       {/* الأحمر عند دخول الصفحة */}
       <div
-        className={`absolute top-0 right-0 h-full bg-red-500 z-20
+        className={`absolute top-0 right-0 h-full bg-red-500 z-50
           transition-all duration-1200 ease-in-out
           ${hideRed ? "w-0" : "w-full"}
         `}
       ></div>
 
-      {/* الأحمر عند الخروج لصفحة signup */}
+      {/* الأحمر عند الانتقال لصفحة أخرى */}
       <div
         className={`absolute top-0 right-0 h-full bg-red-500
           origin-right
           transition-all duration-1000 ease-in-out
           ${fillRed ? "w-full" : "w-0"}
-          z-30
+          z-50
         `}
       ></div>
-      <div className="relative z-10 flex flex-col lg:flex-row w-full">
-        <div
-          className={`flex flex-col px-6 md:pl-50 gap-4 md:gap-5
-            transition-all duration-700 ease-in-out
-            ${
-              hideContent
-                ? "-translate-x-40 opacity-0"
-                : "translate-x-0 opacity-100"
-            }
-          `}
-        >
-          <h2 className="text-3xl md:text-5xl font-extrabold text-red-500">
-            Create an account
-          </h2>
-          <p className="text-lg md:text-2xl text-black pl-3">Enter your details below</p>
 
-          <form
-            onSubmit={handleSubmit}
-            className="flex flex-col gap-4 md:gap-6 pl-4 md:pl-10 pt-6 md:pt-10 w-full md:w-120 h-auto md:h-130"
+      <div
+        className="flex flex-col lg:flex-row w-full h-full relative z-10
+          lg:bg-[linear-gradient(115deg,#ffffff_60%,#ef4444_60%)]
+          bg-white
+          md:border-4 md:border-red-500
+          md:shadow-[0_0_15px_rgba(239,68,68,0.7)]
+        "
+      >
+        {/* Container المحتوى */}
+        <div className="relative z-10 flex flex-col lg:flex-row w-full h-full">
+          {/* قسم الفورم */}
+          <div
+            className={`flex-1 flex flex-col justify-center px-6 lg:pl-32 pt-10 md:pt-20 gap-4
+              transition-all duration-700 ease-in-out
+              ${hideContent ? "-translate-x-40 opacity-0" : "translate-x-0 opacity-100"}
+            `}
           >
-            <label className="flex flex-col">
-              <div className="flex justify-between">
-                <span>Name:</span>
-                <MdDriveFileRenameOutline size={20} />
-              </div>
-              <input
-                type="text"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                className="border-b-2 border-red-400 outline-none"
-              />
-            </label>
+            <h2 className="text-3xl md:text-5xl font-extrabold text-red-500">
+              Create an account
+            </h2>
+            <p className="text-base md:text-2xl text-black">
+              Enter your details below
+            </p>
 
-            <label className="flex flex-col">
-              <div className="flex justify-between">
-                <span>Email or Phone number:</span>
-                <FaPhoneFlip size={20} />
-              </div>
-              <input
-                type="text"
-                value={number}
-                onChange={(e) => setNumber(e.target.value)}
-                className="border-b-2 border-red-400 outline-none"
-              />
-            </label>
+            <form
+              onSubmit={handleSubmit}
+              className="flex flex-col gap-4 md:gap-6 mt-6 w-full max-w-[450px]"
+            >
+              <label className="flex flex-col">
+                <div className="flex justify-between items-center text-sm md:text-base">
+                  <span>Name:</span>
+                  <MdDriveFileRenameOutline
+                    className="text-red-500"
+                    size={20}
+                  />
+                </div>
+                <input
+                  type="text"
+                  required
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  className="border-b-2 border-red-400 outline-none mt-2 py-1 bg-transparent"
+                />
+              </label>
 
-            <label className="flex flex-col">
-              <div className="flex justify-between">
-                <span>Password:</span>
-                <MdOutlinePassword size={20} />
-              </div>
-              <input
-                type="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                className="border-b-2 border-red-400 outline-none"
-              />
-            </label>
+              <label className="flex flex-col">
+                <div className="flex justify-between items-center text-sm md:text-base">
+                  <span>Email or Phone number:</span>
+                  <FaPhoneFlip className="text-red-500" size={18} />
+                </div>
+                <input
+                  type="text"
+                  required
+                  value={number}
+                  onChange={(e) => setNumber(e.target.value)}
+                  className="border-b-2 border-red-400 outline-none mt-2 py-1 bg-transparent"
+                />
+              </label>
 
-            <div className="flex flex-col items-center pt-6 md:pt-10 gap-y-4">
+              <label className="flex flex-col">
+                <div className="flex justify-between items-center text-sm md:text-base">
+                  <span>Password:</span>
+                  <MdOutlinePassword className="text-red-500" size={20} />
+                </div>
+                <input
+                  type="password"
+                  required
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  className="border-b-2 border-red-400 outline-none mt-2 py-1 bg-transparent"
+                />
+              </label>
+
+              <div className="flex flex-col items-center pt-6 gap-y-4">
+                <button
+                  type="submit"
+                  className="w-full h-12 bg-red-500 rounded-md text-white font-bold hover:bg-red-600 transition-all active:scale-95 shadow-md"
+                >
+                  Create Account
+                </button>
+
+                <p className="text-gray-400 text-sm">OR</p>
+
+                <button
+                  type="button"
+                  className="w-full h-12 border-2 border-gray-200 rounded-md flex justify-center items-center gap-3 hover:bg-gray-50 transition-colors"
+                >
+                  <FcGoogle size={22} />
+                  <span className="text-sm md:text-base font-medium">
+                    Sign up with Google
+                  </span>
+                </button>
+              </div>
+            </form>
+
+            <div className="flex gap-2 text-sm md:text-[18px] justify-center lg:justify-start pt-6">
+              <p>Already have an account?</p>
               <button
-                onClick={handleWithCreate}
-                type="submit"
-                className="w-40 md:w-50 h-10 md:h-12 bg-red-500 rounded-md cursor-pointer text-white"
+                type="button"
+                onClick={() => handleTransition("/login")}
+                className="text-red-500 font-bold underline cursor-pointer hover:text-red-700"
               >
-                Create Account
-              </button>
-
-              <p>___ OR ___</p>
-
-              <button className="w-40 md:w-50 h-10 md:h-12 border-2 border-red-500 rounded-md flex justify-center items-center gap-4">
-                <FcGoogle size={22} /> sign up with google
+                Log in
               </button>
             </div>
-          </form>
-
-          <div className="flex gap-3 pl-10 md:pl-30 text-lg md:text-[20px]">
-            <p>Already have account?</p>
-            <button
-              type="button"
-              onClick={handleSignUpClick}
-              className="text-red-500 font-semibold underline cursor-pointer"
-            >
-              log in
-            </button>
           </div>
-        </div>
 
-        <div
-          className={`hidden lg:flex justify-end items-center pl-120
-            transition-all duration-700 ease-in-out
-            ${hideContent ? "translate-x-40 opacity-0" : "opacity-100"}
-          `}
-        >
-          <img src={img} className="w-[700px]" />
+          <div
+            className={`hidden lg:flex flex-1 justify-center items-center pr-10
+              transition-all duration-700 ease-in-out
+              ${hideContent ? "translate-x-40 opacity-0" : "opacity-100"}
+            `}
+          >
+            <img
+              src={img}
+              className="max-w-[600px] object-contain"
+              alt="Signup Illustration"
+            />
+          </div>
         </div>
       </div>
     </div>
