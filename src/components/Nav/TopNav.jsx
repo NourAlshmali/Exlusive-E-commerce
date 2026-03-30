@@ -16,12 +16,12 @@ const TopNav = () => {
   };
 
   return (
-    <div className="w-full h-14 bg-black flex justify-between items-center pr-20 pl-130 gap-40 ">
+    <div className="w-full h-11 bg-black flex justify-between items-center pr-20 pl-130 gap-40 ">
       <div className="flex gap-3">
-        <p className="text-white text-[20px]">
+        <p className="text-white text-[16px]">
           summer sale for all swim suits and free express delivery-off 50%!
         </p>
-        <a href="#" className="text-white text-[20px] underline">
+        <a href="#" className="text-white text-[16px] underline">
           shop now
         </a>
       </div>

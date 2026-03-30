@@ -23,7 +23,7 @@ const ServicesSection = () => {
   ];
 
   return (
-    <div className="w-full h-[45vh] pl-60">
+    <div className="w-full h-[65vh] flex justify-center items-center pt-30">
       <ul className="flex gap-20 mt-20 mx-50">
         {services.map((s, index) => (
           <li

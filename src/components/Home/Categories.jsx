@@ -16,7 +16,7 @@ const Categories = () => {
   ];
 
   return (
-    <div className="w-full h-[80vh] flex flex-col gap-5 pl-40">
+    <div className="w-full h-[80vh] flex flex-col gap-5 pl-25">
       <HomeHeader type="Categories" title="Browse By Category" />
       
       <ul className="w-full flex gap-10 mt-20">

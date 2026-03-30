@@ -69,8 +69,9 @@ const About = () => {
           ))}
         </ul>
         <Team className="mt-20" />
+        <ServicesSection />
       </div>
-      <ServicesSection />
+      
     </div>
   );
 };

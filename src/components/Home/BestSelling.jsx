@@ -52,13 +52,13 @@ const BestSelling = () => {
     <div className="w-full h-[80vh] flex flex-col gap-5 pl-40">
       <div className="flex items-center justify-between w-full pr-40">
         <HomeHeader type="This Month" title="Best Selling Products" />
-        <button className="w-30 h-10 mt-15 bg-red-500 hover:bg-gray-500 rounded-[6px] text-white cursor-pointer">
+        <button className="w-30 h-10 mt-15 bg-red-500 hover:bg-gray-500 rounded-md text-white cursor-pointer">
           View All
         </button>
       </div>
 
       <div className="w-full overflow-x-auto no-scrollbar">
-        <div className="flex gap-20 pt-14 pl-20">
+        <div className="flex gap-20 pt-20 pl-20">
           {products.map((product) => (
             <SalesCard
               key={product.id}

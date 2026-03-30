@@ -46,10 +46,7 @@ const SignUp = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault(); // يمنع إعادة تحميل الصفحة
-
-    const value = number.trim(); // يشيل المسافات الزائدة trim
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // للتحقق اذا كان اللي دخلناه email
-    const phoneRegex = /^[0-9]{8,15}$/; // للتحقق اذا كان اللي دخلناه رقم
+    navigate("/"); // بعد تسجيل الدخول، يتم التوجيه إلى الصفحة الرئيسية
   };
 
   const [name, setName] = useState("");
@@ -66,7 +63,7 @@ const SignUp = () => {
       {/* الأحمر عند دخول الصفحة */}
       <div
         className={`absolute top-0 right-0 h-full bg-red-500 z-20
-          transition-all duration-[1200ms] ease-in-out
+          transition-all duration-1200 ease-in-out
           ${hideRed ? "w-0" : "w-full"}
         `}
       ></div>
@@ -82,7 +79,7 @@ const SignUp = () => {
       ></div>
       <div className="relative z-10 flex w-full">
         <div
-          className={`flex pl-50 pt-20 flex-col gap-5
+          className={`flex pl-50  flex-col gap-5
             transition-all duration-700 ease-in-out
             ${
               hideContent

@@ -21,7 +21,7 @@ const Homepage = () => {
       <Music />
       <Products />
       <Featured />
-      <ServicesSection />
+      <ServicesSection  />
       {/* <SignUp /> */}
       {/* <Login /> */}
       {/* <WishList /> */}

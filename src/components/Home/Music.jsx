@@ -7,13 +7,13 @@ const Music = () => {
   const NOW_IN_MS = new Date().getTime(); //يأخذ الوقت الحالي (تاريخ + الوقت) ويحوّله لـ ميللي ثانية
   const dateTimeAfterThreeDays = NOW_IN_MS + THREE_DAYS_IN_MS; //يعطينا تاريخ + وقت بعد 3 أيام من الآن (بميللي ثانية).
   return (
-    <div className="w-full h-screen  flex justify-center items-center">
+    <div className="w-full h-screen  flex justify-center items-center pt-10">
       <div
         className="w-[90%] h-full
           bg-linear-to-r from-[#000000] from-40% via-[#6b6e70] via-70% to-[#000000]
       "
       >
-        <div className="flex ">
+        <div className="flex  ">
           <div className="flex flex-col ">
             <h3 className="text-green-400 font-bold text-[30px] pl-30 py-20">
               categories
