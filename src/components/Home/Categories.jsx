@@ -16,20 +16,20 @@ const Categories = () => {
   ];
 
   return (
-    <div className="w-full h-[80vh] flex flex-col gap-5 pl-25">
+    <div className="w-full min-h-[80vh] flex flex-col gap-5 px-4 md:pl-25">
       <HomeHeader type="Categories" title="Browse By Category" />
-      
-      <ul className="w-full flex gap-10 mt-20">
+
+      <ul className="w-full flex flex-wrap justify-center md:justify-start gap-4 md:gap-10 mt-10 md:mt-20">
         {categories.map((category) => (
-          <CategoryCard 
-            key={category.id} 
-            name={category.name} 
-            icon={category.icon} 
+          <CategoryCard
+            key={category.id}
+            name={category.name}
+            icon={category.icon}
           />
         ))}
       </ul>
-      
-      <div className="w-full h-0.5 mt-15 bg-gray-300"></div>
+
+      <div className="w-full h-0.5 mt-10 md:mt-15 bg-gray-300"></div>
     </div>
   );
 };

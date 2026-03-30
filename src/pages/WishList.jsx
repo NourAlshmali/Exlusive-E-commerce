@@ -10,7 +10,8 @@ import img2 from "/img/best2.png";
 
 const Wishlist = () => {
   const navigate = useNavigate();
-  const { wishlist, setWishlist, toggleWishlist } = useContext(WishlistContextData);
+  const { wishlist, setWishlist, toggleWishlist } =
+    useContext(WishlistContextData);
   const { setCart } = useContext(CartContextData);
 
   const recommendations = [
@@ -78,24 +79,24 @@ const Wishlist = () => {
   };
 
   return (
-    <div className="bg-white min-h-screen flex justify-center py-10">
-      <div className="w-[90%] max-w-5xl flex flex-col">
-        <div className="flex justify-between items-center mb-10">
-          <h2 className="text-xl font-medium text-gray-800">
+    <div className="bg-white min-h-screen flex justify-center py-10 px-4">
+      <div className="w-full max-w-5xl flex flex-col">
+        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-10 gap-4">
+          <h2 className="text-lg md:text-xl font-medium text-gray-800">
             Wishlist ({wishlist.length})
           </h2>
           <button
             onClick={handleMoveAllToBag}
-            className="px-6 py-3 border border-gray-400 rounded hover:bg-black hover:text-white transition duration-300 font-medium cursor-pointer"
+            className="px-4 md:px-6 py-2 md:py-3 border border-gray-400 rounded hover:bg-black hover:text-white transition duration-300 font-medium cursor-pointer text-sm md:text-base"
           >
             Move All To Bag
           </button>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mb-10 md:mb-20">
           {wishlist.map((item) => (
             <div key={item.id} className="group flex flex-col gap-2">
-              <div className="relative bg-[#F5F5F5] rounded flex justify-center items-center overflow-hidden h-64">
+              <div className="relative bg-[#F5F5F5] rounded flex justify-center items-center overflow-hidden h-48 md:h-64">
                 <div className="absolute top-3 right-3 z-10">
                   <button
                     onClick={() => toggleWishlist(item)}
@@ -105,7 +106,7 @@ const Wishlist = () => {
                   </button>
                 </div>
 
-                <div className="p-10 flex justify-center items-center h-full w-full">
+                <div className="p-6 md:p-10 flex justify-center items-center h-full w-full">
                   <img
                     src={item.image}
                     alt={item.title}
@@ -113,15 +114,15 @@ const Wishlist = () => {
                   />
                 </div>
 
-                <button className="absolute bottom-0 w-full bg-black text-white py-2 opacity-0 group-hover:opacity-100 transition-all duration-300 text-sm font-medium">
+                <button className="absolute bottom-0 w-full bg-black text-white py-2 opacity-0 group-hover:opacity-100 transition-all duration-300 text-xs md:text-sm font-medium">
                   Add To Cart
                 </button>
               </div>
 
-              <h3 className="font-bold text-sm truncate mt-2 text-gray-800">
+              <h3 className="font-bold text-xs md:text-sm truncate mt-2 text-gray-800">
                 {item.title}
               </h3>
-              <div className="flex gap-3 items-center text-sm">
+              <div className="flex gap-3 items-center text-xs md:text-sm">
                 <span className="text-[#DB4444] font-semibold">
                   ${item.currentPrice}
                 </span>
@@ -135,17 +136,17 @@ const Wishlist = () => {
           ))}
         </div>
 
-        <div className="flex items-center justify-between mb-10 mt-10">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-10 mt-10 gap-4">
           <HomeHeader type="just for you" title=" " />
           <button
             onClick={handleWithView}
-            className="px-10 py-3 border border-gray-400 rounded hover:bg-black hover:text-white transition duration-300 cursor-pointer font-medium"
+            className="px-6 md:px-10 py-2 md:py-3 border border-gray-400 rounded hover:bg-black hover:text-white transition duration-300 cursor-pointer font-medium text-sm md:text-base"
           >
             See All
           </button>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
           {recommendations.map((product) => (
             <SalesCard key={product.id} {...product} />
           ))}

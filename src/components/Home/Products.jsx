@@ -99,9 +99,9 @@ const Products = () => {
   ];
 
   return (
-    <div className="w-full min-h-screen pt-20 flex flex-col pl-40">
+    <div className="w-full min-h-screen pt-10 md:pt-20 flex flex-col px-4 md:pl-40">
       <HomeHeader type="Our Products" title="Explore Our Products" />
-      <div className="grid grid-cols-4 pt-20 gap-5 px-30">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 pt-10 md:pt-20 gap-4 md:gap-5 px-4 md:px-30">
         {productsData.map((product) => (
           <SalesCard
             key={product.id}

@@ -49,16 +49,16 @@ const BestSelling = () => {
   ];
 
   return (
-    <div className="w-full h-[80vh] flex flex-col gap-5 pl-40">
-      <div className="flex items-center justify-between w-full pr-40">
+    <div className="w-full min-h-[80vh] flex flex-col gap-5 px-4 md:pl-40">
+      <div className="flex flex-col md:flex-row items-start md:items-center justify-between w-full md:pr-40 gap-4">
         <HomeHeader type="This Month" title="Best Selling Products" />
-        <button className="w-30 h-10 mt-15 bg-red-500 hover:bg-gray-500 rounded-md text-white cursor-pointer">
+        <button className="w-30 h-10 mt-4 md:mt-15 bg-red-500 hover:bg-gray-500 rounded-md text-white cursor-pointer">
           View All
         </button>
       </div>
 
       <div className="w-full overflow-x-auto no-scrollbar">
-        <div className="flex gap-20 pt-20 pl-20">
+        <div className="flex gap-4 md:gap-20 pt-4 md:pt-20 pl-4 md:pl-20">
           {products.map((product) => (
             <SalesCard
               key={product.id}

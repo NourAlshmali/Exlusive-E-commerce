@@ -23,23 +23,25 @@ const ServicesSection = () => {
   ];
 
   return (
-    <div className="w-full h-[65vh] flex justify-center items-center pt-30">
-      <ul className="flex gap-20 mt-20 mx-50">
+    <div className="w-full min-h-[65vh] flex justify-center items-center pt-10 md:pt-30 px-4">
+      <ul className="flex flex-col md:flex-row gap-10 md:gap-20 mt-10 md:mt-20 mx-4 md:mx-50">
         {services.map((s, index) => (
           <li
             key={index}
-            className="group w-70 h-70 flex flex-col items-center text-center gap-5"
+            className="group w-full md:w-70 h-auto md:h-70 flex flex-col items-center text-center gap-5"
           >
             <div
-              className="w-40 h-40 rounded-full bg-gray-300 flex items-center justify-center
+              className="w-30 md:w-40 h-30 md:h-40 rounded-full bg-gray-300 flex items-center justify-center
                             transition-transform duration-300 ease-out
                             group-hover:scale-110"
             >
-              <span className="text-black text-[70px]">{s.icon}</span>
+              <span className="text-black text-5xl md:text-[70px]">
+                {s.icon}
+              </span>
             </div>
 
-            <h3 className="text-[25px] font-bold">{s.title}</h3>
-            <p className="text-gray-500 font-bold text-[15px]">
+            <h3 className="text-xl md:text-[25px] font-bold">{s.title}</h3>
+            <p className="text-gray-500 font-bold text-sm md:text-[15px]">
               {s.description}
             </p>
           </li>

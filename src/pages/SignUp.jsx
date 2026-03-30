@@ -55,7 +55,7 @@ const SignUp = () => {
 
   return (
     <div
-      className="flex w-full h-screen relative z-10
+      className="flex flex-col lg:flex-row w-full h-screen relative z-10
           bg-[linear-gradient(115deg,#ffffff_60%,#ef4444_60%)]
           border-4 border-red-500
           shadow-[0_0_15px_rgba(239,68,68,0.7)]"
@@ -77,9 +77,9 @@ const SignUp = () => {
           z-30
         `}
       ></div>
-      <div className="relative z-10 flex w-full">
+      <div className="relative z-10 flex flex-col lg:flex-row w-full">
         <div
-          className={`flex pl-50  flex-col gap-5
+          className={`flex flex-col px-6 md:pl-50 gap-4 md:gap-5
             transition-all duration-700 ease-in-out
             ${
               hideContent
@@ -88,18 +88,18 @@ const SignUp = () => {
             }
           `}
         >
-          <h2 className="text-5xl font-extrabold text-red-500">
+          <h2 className="text-3xl md:text-5xl font-extrabold text-red-500">
             Create an account
           </h2>
-          <p className="text-2xl text-black pl-3">Enter your details below</p>
+          <p className="text-lg md:text-2xl text-black pl-3">Enter your details below</p>
 
           <form
             onSubmit={handleSubmit}
-            className="flex flex-col gap-6 pl-10 pt-10 w-120 h-130 "
+            className="flex flex-col gap-4 md:gap-6 pl-4 md:pl-10 pt-6 md:pt-10 w-full md:w-120 h-auto md:h-130"
           >
             <label className="flex flex-col">
               <div className="flex justify-between">
-                <span>Name :</span>
+                <span>Name:</span>
                 <MdDriveFileRenameOutline size={20} />
               </div>
               <input
@@ -112,7 +112,7 @@ const SignUp = () => {
 
             <label className="flex flex-col">
               <div className="flex justify-between">
-                <span>Email or Phone number :</span>
+                <span>Email or Phone number:</span>
                 <FaPhoneFlip size={20} />
               </div>
               <input
@@ -125,7 +125,7 @@ const SignUp = () => {
 
             <label className="flex flex-col">
               <div className="flex justify-between">
-                <span>Password :</span>
+                <span>Password:</span>
                 <MdOutlinePassword size={20} />
               </div>
               <input
@@ -136,24 +136,24 @@ const SignUp = () => {
               />
             </label>
 
-            <div className="flex flex-col items-center pt-10 gap-y-4">
+            <div className="flex flex-col items-center pt-6 md:pt-10 gap-y-4">
               <button
                 onClick={handleWithCreate}
                 type="submit"
-                className="w-50 h-12 bg-red-500 rounded-md cursor-pointer text-white"
+                className="w-40 md:w-50 h-10 md:h-12 bg-red-500 rounded-md cursor-pointer text-white"
               >
                 Create Account
               </button>
 
               <p>___ OR ___</p>
 
-              <button className="w-50 h-12 border-2 border-red-500 rounded-md flex justify-center items-center gap-4">
+              <button className="w-40 md:w-50 h-10 md:h-12 border-2 border-red-500 rounded-md flex justify-center items-center gap-4">
                 <FcGoogle size={22} /> sign up with google
               </button>
             </div>
           </form>
 
-          <div className="flex gap-3 pl-30 text-[20px]">
+          <div className="flex gap-3 pl-10 md:pl-30 text-lg md:text-[20px]">
             <p>Already have account?</p>
             <button
               type="button"
@@ -166,7 +166,7 @@ const SignUp = () => {
         </div>
 
         <div
-          className={`flex justify-end items-center pl-120
+          className={`hidden lg:flex justify-end items-center pl-120
             transition-all duration-700 ease-in-out
             ${hideContent ? "translate-x-40 opacity-0" : "opacity-100"}
           `}

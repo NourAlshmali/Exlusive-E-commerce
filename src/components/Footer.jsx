@@ -15,9 +15,9 @@ const Footer = () => {
 
   return (
     <footer className="bg-black text-white mt-10">
-      <div className="max-w-6xl mx-auto py-10 grid grid-cols-5 gap-30">
+      <div className="max-w-6xl mx-auto py-10 px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 md:gap-30">
         <div className="flex flex-col gap-3">
-          <h4 className="font-bold text-4xl">Exclusive</h4>
+          <h4 className="font-bold text-2xl md:text-4xl">Exclusive</h4>
           <ul className="space-y-1">
             {exclusiveLinks.map((link, idx) => (
               <li key={idx}>{link}</li>

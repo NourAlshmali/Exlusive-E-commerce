@@ -4,8 +4,14 @@ import { WishlistContextData } from "../WishlistContext";
 import { CartContextData } from "../CartContext";
 
 import TopNav from "./TopNav";
-import { CiSearch, CiHeart, CiShoppingCart } from "react-icons/ci";
+import {
+  CiSearch,
+  CiHeart,
+  CiShoppingCart,
+  CiMenuBurger,
+} from "react-icons/ci";
 import { IoPersonOutline } from "react-icons/io5";
+import { FaTimes } from "react-icons/fa";
 import AccountDropdown from "./AccountDropDown";
 import {
   FaUserCircle,
@@ -25,6 +31,7 @@ const NavBar = () => {
 
   const [showSearch, setShowSearch] = useState(false);
   const [account, setAccount] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const NavTabs = [
     { id: 1, tab: "Home", path: "/" },
@@ -60,6 +67,7 @@ const NavBar = () => {
   const handleIconClick = (icon) => {
     if (icon.path) {
       navigate(icon.path);
+      setMobileMenuOpen(false);
       return;
     }
 
@@ -80,27 +88,31 @@ const NavBar = () => {
     <div className="w-full">
       <TopNav />
 
-      <nav className="bg-transparent flex justify-around items-center h-20 relative">
-        <h1 className="text-black font-extrabold text-[35px]">Exclusive</h1>
+      <nav className="bg-transparent flex justify-between md:justify-around items-center h-20 relative px-4 md:px-0">
+        <h1 className="text-black font-extrabold text-2xl md:text-[35px]">
+          Exclusive
+        </h1>
 
-        <ul className="flex gap-8">
+        {/* Desktop Navigation */}
+        <ul className="hidden md:flex gap-8">
           {NavTabs.map((tab) => (
             <li
               onClick={() => handleIconClick(tab)}
               key={tab.id}
-              className="text-black text-[20px] cursor-pointer hover:text-red-500"
+              className="text-black text-lg md:text-[20px] cursor-pointer hover:text-red-500"
             >
               {tab.tab}
             </li>
           ))}
         </ul>
 
-        <ul className="flex gap-10 items-center">
+        {/* Desktop Icons */}
+        <ul className="hidden md:flex gap-10 items-center">
           {NavIcons.map((icon) => (
             <li
               key={icon.id}
               onClick={() => handleIconClick(icon)}
-              className={`relative text-[30px] cursor-pointer ${
+              className={`relative text-2xl md:text-[30px] cursor-pointer ${
                 icon.type === "heart"
                   ? "hover:text-red-500"
                   : "hover:text-blue-500"
@@ -140,6 +152,56 @@ const NavBar = () => {
             </li>
           ))}
         </ul>
+
+        {/* Mobile Menu Button */}
+        <button
+          className="md:hidden text-2xl cursor-pointer"
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+        >
+          {mobileMenuOpen ? <FaTimes /> : <CiMenuBurger />}
+        </button>
+
+        {/* Mobile Menu */}
+        {mobileMenuOpen && (
+          <div className="absolute top-20 left-0 w-full bg-white shadow-lg z-50 md:hidden">
+            <ul className="flex flex-col gap-4 p-6">
+              {NavTabs.map((tab) => (
+                <li
+                  onClick={() => handleIconClick(tab)}
+                  key={tab.id}
+                  className="text-black text-lg cursor-pointer hover:text-red-500 border-b pb-2"
+                >
+                  {tab.tab}
+                </li>
+              ))}
+            </ul>
+            <ul className="flex gap-6 p-6 border-t">
+              {NavIcons.map((icon) => (
+                <li
+                  key={icon.id}
+                  onClick={() => handleIconClick(icon)}
+                  className={`relative text-2xl cursor-pointer ${
+                    icon.type === "heart"
+                      ? "hover:text-red-500"
+                      : "hover:text-blue-500"
+                  }`}
+                >
+                  {icon.tab}
+                  {icon.type === "heart" && wishlist.length > 0 && (
+                    <span className="absolute -top-2 -right-2 bg-red-500 text-white text-[12px] w-5 h-5 flex items-center justify-center rounded-full">
+                      {wishlist.length}
+                    </span>
+                  )}
+                  {icon.type === "cart" && cart.length > 0 && (
+                    <span className="absolute -top-2 -right-2 bg-red-500 text-white text-[12px] w-5 h-5 flex items-center justify-center rounded-full">
+                      {cart.length}
+                    </span>
+                  )}
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
       </nav>
 
       <div className="w-full h-0.5 bg-gray-300" />

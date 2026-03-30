@@ -8,17 +8,45 @@ import PromoCard from "../PromoCard";
 
 const Featured = () => {
   const featuredProducts = [
-    { id: 1, imgSrc: img1, title: "PlayStation 5", description: "Black and White version of the PS5 coming out on sale.", colSpan: "col-span-2", rowSpan: "row-span-2" },
-    { id: 2, imgSrc: img2, title: "Women's Collections", description: "Featured woman collections that give you another vibe.", colSpan: "col-span-2", rowSpan: "row-span-1" },
-    { id: 3, imgSrc: img3, title: "Speakers", description: "Amazon wireless speakers", colSpan: "col-span-1", rowSpan: "row-span-1" },
-    { id: 4, imgSrc: img4, title: "Perfume", description: "GUCCI INTENSE OUD EDP", colSpan: "col-span-1", rowSpan: "row-span-1" },
+    {
+      id: 1,
+      imgSrc: img1,
+      title: "PlayStation 5",
+      description: "Black and White version of the PS5 coming out on sale.",
+      colSpan: "col-span-1 md:col-span-2",
+      rowSpan: "row-span-1 md:row-span-2",
+    },
+    {
+      id: 2,
+      imgSrc: img2,
+      title: "Women's Collections",
+      description: "Featured woman collections that give you another vibe.",
+      colSpan: "col-span-1 md:col-span-2",
+      rowSpan: "row-span-1",
+    },
+    {
+      id: 3,
+      imgSrc: img3,
+      title: "Speakers",
+      description: "Amazon wireless speakers",
+      colSpan: "col-span-1",
+      rowSpan: "row-span-1",
+    },
+    {
+      id: 4,
+      imgSrc: img4,
+      title: "Perfume",
+      description: "GUCCI INTENSE OUD EDP",
+      colSpan: "col-span-1",
+      rowSpan: "row-span-1",
+    },
   ];
 
   return (
-    <div className="w-full h-screen pt-20 px-50">
+    <div className="w-full min-h-screen pt-10 md:pt-20 px-4 md:px-50">
       <HomeHeader type="Featured" title="New Arrival" />
 
-      <div className="grid grid-cols-4 grid-rows-2 gap-4 pt-10">
+      <div className="grid grid-cols-1 md:grid-cols-4 grid-rows-1 md:grid-rows-2 gap-4 pt-10">
         {featuredProducts.map((item) => (
           <PromoCard
             key={item.id}

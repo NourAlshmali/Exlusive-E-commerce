@@ -33,16 +33,18 @@ const About = () => {
 
   return (
     <div className="min-h-screen">
-      <div className="max-w-6xl mx-auto px-6 ">
+      <div className="max-w-6xl mx-auto px-4 md:px-6">
         <div className="space-y-4">
           <Breadcrumb items={["Home"]} current="About" />
         </div>
 
-        <div className="flex flex-col md:flex-row items-center justify-center gap-40 pt-16">
+        <div className="flex flex-col md:flex-row items-center justify-center gap-10 md:gap-40 pt-10 md:pt-16">
           <div className="flex-1 space-y-6 text-center md:text-left">
-            <h1 className="text-4xl md:text-5xl font-bold">Our Story</h1>
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold">
+              Our Story
+            </h1>
             <p className="text-gray-600 leading-relaxed">
-              Launched in 2015, Exclusive is South Asia’s premier online
+              Launched in 2015, Exclusive is South Asia's premier online
               shopping marketplace with an active presence in Bangladesh.
               Supported by a wide range of tailored marketing, data, and service
               solutions, Exclusive has 10,500 sellers and 300 brands and serves
@@ -56,10 +58,14 @@ const About = () => {
           </div>
 
           <div className="flex-1 flex justify-center">
-            <img src={img2} alt="About" className="w-full object-contain" />
+            <img
+              src={img2}
+              alt="About"
+              className="w-full max-w-md object-contain"
+            />
           </div>
         </div>
-        <ul className="w-full flex gap-10 mt-20">
+        <ul className="w-full flex flex-wrap justify-center md:justify-start gap-4 md:gap-10 mt-10 md:mt-20">
           {categories.map((category) => (
             <CategoryCard
               key={category.id}
@@ -68,10 +74,9 @@ const About = () => {
             />
           ))}
         </ul>
-        <Team className="mt-20" />
+        <Team className="mt-10 md:mt-20" />
         <ServicesSection />
       </div>
-      
     </div>
   );
 };

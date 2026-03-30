@@ -11,23 +11,86 @@ const FlashSalles = () => {
   const dateTimeAfterThreeDays = NOW_IN_MS + THREE_DAYS_IN_MS; //يعطينا تاريخ + وقت بعد 3 أيام من الآن (بميللي ثانية).
 
   const flashSalles = [
-    { id: 7, image: img1, title: "car", currentPrice: "30", oldPrice: "200", discount: "40%", rating: "3", reviews: "3", },
-    { id: 8, image: img1, title: "car", currentPrice: "100", oldPrice: "140", discount: "40%", rating: "3", reviews: "3", },
-    { id: 9, image: img1, title: "car", currentPrice: "200", oldPrice: "250", discount: "40%", rating: "3", reviews: "3", },
-    { id: 10, image: img1, title: "car", currentPrice: "170", oldPrice: "203", discount: "40", rating: "3", reviews: "3", },
-    { id: 11, image: img1, title: "car", currentPrice: "100", oldPrice: "140", discount: "40", rating: "3", reviews: "3", },
-    { id: 12, image: img1, title: "car", currentPrice: "100", oldPrice: "140", discount: "40", rating: "3", reviews: "3", },
-    { id: 13, image: img1, title: "car", currentPrice: "100", oldPrice: "140", discount: "40", rating: "3", reviews: "3", },
+    {
+      id: 7,
+      image: img1,
+      title: "car",
+      currentPrice: "30",
+      oldPrice: "200",
+      discount: "40%",
+      rating: "3",
+      reviews: "3",
+    },
+    {
+      id: 8,
+      image: img1,
+      title: "car",
+      currentPrice: "100",
+      oldPrice: "140",
+      discount: "40%",
+      rating: "3",
+      reviews: "3",
+    },
+    {
+      id: 9,
+      image: img1,
+      title: "car",
+      currentPrice: "200",
+      oldPrice: "250",
+      discount: "40%",
+      rating: "3",
+      reviews: "3",
+    },
+    {
+      id: 10,
+      image: img1,
+      title: "car",
+      currentPrice: "170",
+      oldPrice: "203",
+      discount: "40",
+      rating: "3",
+      reviews: "3",
+    },
+    {
+      id: 11,
+      image: img1,
+      title: "car",
+      currentPrice: "100",
+      oldPrice: "140",
+      discount: "40",
+      rating: "3",
+      reviews: "3",
+    },
+    {
+      id: 12,
+      image: img1,
+      title: "car",
+      currentPrice: "100",
+      oldPrice: "140",
+      discount: "40",
+      rating: "3",
+      reviews: "3",
+    },
+    {
+      id: 13,
+      image: img1,
+      title: "car",
+      currentPrice: "100",
+      oldPrice: "140",
+      discount: "40",
+      rating: "3",
+      reviews: "3",
+    },
   ];
 
   return (
-    <div className="w-full h-screen flex flex-col gap-5 pt-26 pl-40 ">
-      <div className="flex items-center justify-between w-full pr-40">
-        <HomeHeader type="Today’s" title="Flash Sales" />
+    <div className="w-full min-h-screen flex flex-col gap-5 pt-10 md:pt-26 px-4 md:pl-40">
+      <div className="flex flex-col md:flex-row items-start md:items-center justify-between w-full md:pr-40 gap-4">
+        <HomeHeader type="Today's" title="Flash Sales" />
         <CountdownTimer targetDate={dateTimeAfterThreeDays} />
       </div>
       <div className="w-full overflow-x-auto no-scrollbar">
-        <div className="flex gap-20 pt-10 pl-20 ">
+        <div className="flex gap-4 md:gap-20 pt-4 md:pt-10 pl-4 md:pl-20">
           {flashSalles.map((sale) => (
             <SalesCard
               //image, title, currentPrice, oldPrice, discount, rating, reviews
@@ -47,7 +110,7 @@ const FlashSalles = () => {
       <div className="flex self-center">
         <ViewAllButton />
       </div>
-      <div className="w-full h-0.5 mt-10 bg-gray-300 "></div>
+      <div className="w-full h-0.5 mt-10 bg-gray-300"></div>
     </div>
   );
 };

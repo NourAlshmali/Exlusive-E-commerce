@@ -76,31 +76,32 @@ const Login = () => {
       ></div>
 
       <div
-        className="flex w-full h-full relative z-10
+        className="flex flex-col lg:flex-row w-full h-full relative z-10
           bg-[linear-gradient(115deg,#ffffff_60%,#ef4444_60%)]
           border-4 border-red-500
           shadow-[0_0_15px_rgba(239,68,68,0.7)]
         "
       >
-        
         <div
-          className={`flex-1 flex flex-col justify-center pl-50 pt-20 gap-6
+          className={`flex-1 flex flex-col justify-center px-6 md:pl-50 pt-10 md:pt-20 gap-4 md:gap-6
             transition-all duration-700 ease-in-out
             ${hideContent ? "-translate-x-40 opacity-0" : "opacity-100"}
           `}
         >
-          <h2 className="text-5xl font-extrabold text-red-500">
+          <h2 className="text-3xl md:text-5xl font-extrabold text-red-500">
             Log in to Exclusive
           </h2>
-          <p className="text-2xl text-black">Enter your details below</p>
+          <p className="text-lg md:text-2xl text-black">
+            Enter your details below
+          </p>
 
           <form
             onSubmit={handleSubmit}
-            className="flex flex-col gap-6 mt-6 w-120 h-130"
+            className="flex flex-col gap-4 md:gap-6 mt-4 md:mt-6 w-full md:w-120 h-auto md:h-130"
           >
             <label className="flex flex-col">
               <div className="flex justify-between items-center">
-                <span>Email or Phone number :</span>
+                <span>Email or Phone number:</span>
                 <FaPhoneFlip size={20} />
               </div>
               <input
@@ -113,7 +114,7 @@ const Login = () => {
 
             <label className="flex flex-col">
               <div className="flex justify-between items-center">
-                <span>Password :</span>
+                <span>Password:</span>
                 <MdOutlinePassword size={20} />
               </div>
               <input
@@ -124,24 +125,24 @@ const Login = () => {
               />
             </label>
 
-            <div className="flex items-center justify-between mt-6">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mt-4 md:mt-6 gap-4">
               <button
                 onClick={handleWithLogin}
                 type="button"
-                className="w-32 h-12 bg-red-500 rounded-md text-white cursor-pointer"
+                className="w-32 h-10 md:h-12 bg-red-500 rounded-md text-white cursor-pointer"
               >
                 Log in
               </button>
 
               <button
                 type="button"
-                className="w-37 h-12 border-b-2 border-red-500 rounded-md"
+                className="w-37 h-10 md:h-12 border-b-2 border-red-500 rounded-md"
               >
-                forget password ?
+                forget password?
               </button>
             </div>
 
-            <div className="flex gap-3 text-[20px] self-center pt-5">
+            <div className="flex gap-3 text-lg md:text-[20px] self-center pt-5">
               <p>No account yet?</p>
               <button
                 type="button"
@@ -154,15 +155,15 @@ const Login = () => {
           </form>
         </div>
 
-        <div className="flex-1 hidden lg:flex justify-end items-center"></div>
+        <div className="hidden lg:flex flex-1 justify-end items-center"></div>
         <div
-                  className={`flex justify-end items-center pl-120
+          className={`hidden lg:flex justify-end items-center pl-120
                     transition-all duration-700 ease-in-out
                     ${hideContent ? "translate-x-40 opacity-0" : "opacity-100"}
                   `}
-                >
-                  <img src={img} className="w-175" />
-                </div>
+        >
+          <img src={img} className="w-175" />
+        </div>
       </div>
     </div>
   );

@@ -30,8 +30,8 @@ const SalesCard = ({
   const added = isInCart(id);
 
   return (
-    <div className="group flex flex-col gap-2 min-w-64">
-      <div className="relative bg-[#F5F5F5] rounded-md p-10 flex justify-center items-center overflow-hidden h-64">
+    <div className="group flex flex-col gap-2 min-w-48 md:min-w-64">
+      <div className="relative bg-[#F5F5F5] rounded-md p-6 md:p-10 flex justify-center items-center overflow-hidden h-48 md:h-64">
         <span className="absolute top-3 left-3 bg-[#DB4444] text-white text-xs px-3 py-1 rounded">
           -{discount}
         </span>
@@ -85,17 +85,19 @@ const SalesCard = ({
       </div>
 
       <div className="flex flex-col gap-1 mt-2">
-        <h2 className="font-bold text-base truncate">{title}</h2>
+        <h2 className="font-bold text-sm md:text-base truncate">{title}</h2>
 
         <div className="flex gap-3 items-center">
-          <span className="text-[#DB4444] font-medium">${currentPrice}</span>
-          <span className="text-gray-500 line-through text-sm">
+          <span className="text-[#DB4444] font-medium text-sm md:text-base">
+            ${currentPrice}
+          </span>
+          <span className="text-gray-500 line-through text-xs md:text-sm">
             ${oldPrice}
           </span>
         </div>
 
         <div className="flex items-center gap-1">
-          <div className="flex text-yellow-400 text-sm">
+          <div className="flex text-yellow-400 text-xs md:text-sm">
             {[...Array(5)].map((_, i) => (
               <FaStar key={i} color={i < rating ? "#FFAD33" : "#D1D5DB"} />
             ))}
